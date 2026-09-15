@@ -1,12 +1,14 @@
 -- Mitica --
+Estos son los buenos x1
 
 -- Rara --
 como va el tostón x4
-me he quedado solo x3
+me he quedado solo x5
 
 -- Especial --
-me seguís / me seguís el concepto x6
+me seguís / me seguís el concepto x17
 
 -- Común --
-vale x19
-de acuerdo / me explico x10
+vale x24
+de acuerdo / me explico x35
+

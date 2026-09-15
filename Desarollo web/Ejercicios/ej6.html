@@ -7,8 +7,13 @@
 </head>
 
 <script>
+    let numero = prompt("Dame un numero")
+    let acum = 1
 
-
+    for (let i = 1; i <= numero; i++) {
+        acum*=i
+    }
+    console.log("El factorial de "+numero+" es "+acum)
 </script>
 
 <body>

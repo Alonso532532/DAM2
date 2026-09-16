@@ -2,29 +2,24 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton# Se importa s
 from PyQt6.QtCore import QSize, Qt
 
 class MainWindow(QMainWindow):
-    clicks = 0
-
     def __init__(self): # Esto es una función a la que le pasas "self" que es la propia clase ¿constructor?
         super().__init__() # Esto inicializa el objeto
 
-        self.botonPulsado = True # La inicializo con "self" para poder usarla fuera del "constructor"
-
+        self.cont = 0
+        
         self.setWindowTitle("Mi Aplicación") # Le pongo un titulo
 
         boton = QPushButton("Pulsa") # Botón
-        boton.setCheckable(True) # Lo hago marcable
 
-        boton.clicked.connect(self.botonActivado) # llama a la función cuando es pulsado
-
-        boton.setChecked(self.botonPulsado) # Le asigno al botón el estado de la variable "botonPulsado"
+        boton.clicked.connect(self.botonPulsadoYSoltado) # llama a la función cuando es pulsado y soltado
 
         self.setCentralWidget(boton) # situo el botón en toda la pantalla
 
-    def botonActivado(self,estado):
-        self.botonPulsado=estado
-        print(self.botonPulsado)
-
         
+    # Estas funciónes se ejecuta al interactuar con el botón
+    def botonPulsadoYSoltado(self):
+        self.cont+=1
+        print(self.cont)
 
 
 app = QApplication([]) # Hago un objeto QApplication

@@ -1,4 +1,4 @@
-package StreamEj;
+package Ejercicios.StreamEj;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,7 +13,7 @@ import java.util.Map;
 public class Zurzo {
     public static void main(String[] args) {
         HashMap<Integer, Registro> regs = new HashMap<>();
-        try (BufferedReader leer = new BufferedReader(new FileReader("src/StreamEj/DATA.csv"))){
+        try (BufferedReader leer = new BufferedReader(new FileReader("src/Ejercicios.StreamEj/DATA.csv"))){
             String linea;
             Boolean primera = true;
             while((linea = leer.readLine())!=null){

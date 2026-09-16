@@ -1,4 +1,4 @@
-package StreamEj;
+package Ejercicios.StreamEj;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class masTodabia {
     public static void main(String[] args) {
         HashMap<String, Integer> palabras = new HashMap<>();
-        try(BufferedReader leer = new BufferedReader( new FileReader("src/StreamEj/DATA.csv"))){
+        try(BufferedReader leer = new BufferedReader( new FileReader("src/Ejercicios.StreamEj/DATA.csv"))){
             String linea;
             while ((linea = leer.readLine()) != null){
                 Matcher matcher = Pattern.compile("[A-Z]{2}").matcher(linea);

@@ -1,4 +1,4 @@
-package StreamEj;
+package Ejercicios.StreamEj;
 
 import java.time.LocalDateTime;
 

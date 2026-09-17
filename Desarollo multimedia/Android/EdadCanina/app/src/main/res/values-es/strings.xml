@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Edad Canina</string>
+    <string name="preguntar_edad">Que edad Tienes?</string>
+    <string name="texto_del_edit">Inroduce la edad de tu perro</string>
+    <string name="texto_del_boton">Calcular</string>
+    <string name="texto_respuesta">Si fueras un perro tendrías %d</string>
+    <string name="error_vacio">Tienes que introducir una edad</string>
+</resources>

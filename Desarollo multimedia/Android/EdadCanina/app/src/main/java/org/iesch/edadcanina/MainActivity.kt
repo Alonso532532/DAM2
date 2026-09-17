@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, R.string.error_vacio, Toast.LENGTH_LONG).show()
             } else {
                 textoResultado.text = getString(R.string.texto_respuesta, edad.toInt() * 7)
-
             }
         }
 

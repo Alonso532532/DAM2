@@ -3,14 +3,19 @@ package EjerciciosIniciales.StreamClase;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class FrutaEj {
     static void main() {
         List<Fruta> lista = new ArrayList<>(Arrays.asList(
-                new Fruta("Manzana", 12.90),
-                new Fruta("Pera", 11.90),
-                new Fruta("Platano", 12.90)
+                new Fruta("Manzana", 2.00),
+                new Fruta("Manzana", 1.00),
+                new Fruta("Platano", 1.00),
+                new Fruta("Platano", 2.00),
+                new Fruta("Platano", 4.00)
         ));
+
+        System.out.println(lista.stream().filter(a -> Objects.equals(a.nombre, "Manzana")).map(a -> a.precio).reduce(Double::sum).get());
 
         List<Integer> numeros = new ArrayList<>(Arrays.asList(1,5,3));
         System.out.println("Ej 1");

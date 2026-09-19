@@ -1,4 +1,4 @@
-package EjerciciosIniciales.StreamEj;
+package EjerciciosIniciales.StreamEjDAM1;
 
 import java.time.LocalDateTime;
 

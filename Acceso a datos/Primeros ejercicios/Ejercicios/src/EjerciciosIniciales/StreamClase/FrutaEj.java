@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class FrutaEj {
     static void main() {
@@ -23,7 +24,12 @@ public class FrutaEj {
         System.out.println("Ej 2");
         lista.stream().map(Fruta::getPrecio).distinct().forEach(System.out::println);
         System.out.println("Ej 3");
+        // Con reduce
         System.out.println(numeros.stream().map(a -> a * a).reduce(0, Integer::sum));
+        // Con collect
+        System.out.println(numeros.stream().collect(Collectors.summingInt(a->a*a)));
+        // Con map to int
+        System.out.println(numeros.stream().mapToInt(a->a*a).sum());
     }
 }
 

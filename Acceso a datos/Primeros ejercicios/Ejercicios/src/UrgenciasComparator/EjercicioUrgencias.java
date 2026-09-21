@@ -1,8 +1,7 @@
 package UrgenciasComparator;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class EjercicioUrgencias {
     static void main() {

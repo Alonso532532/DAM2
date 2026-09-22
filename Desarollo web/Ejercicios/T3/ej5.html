@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+    var festivos = [[1,6],[],[],[17,18,23],[1],[],[],[15],[],[12],[1],[6,8,25]]
+
+    var fechaDia1 = new Date()
+    var fechaDia2 = new Date()
+
+    var mes = prompt("De que mes")
+
+    document.write("<h1>"+`${mes}`+"</h1>")
+
+    switch (mes) {
+    case "Enero":
+    case "enero":
+        fechaDia1.setMonth(0)
+        fechaDia2.setMonth(0)
+        break;
+
+    case "Febrero": 
+    case "febrero":
+        fechaDia1.setMonth(1)
+        fechaDia2.setMonth(1)
+        break;
+
+    case "Marzo": 
+    case "marzo":
+        fechaDia1.setMonth(2)
+        fechaDia2.setMonth(2)
+        break;
+
+    case "Abril": 
+    case "abril":
+        fechaDia1.setMonth(3)
+        fechaDia2.setMonth(3)
+        break;
+
+    case "Mayo": 
+    case "mayo":
+        fechaDia1.setMonth(4)
+        fechaDia2.setMonth(4)
+        break;
+
+    case "Junio": 
+    case "junio":
+        fechaDia1.setMonth(5)
+        fechaDia2.setMonth(5)
+        break;
+
+    case "Julio": 
+    case "julio":
+        fechaDia1.setMonth(6)
+        fechaDia2.setMonth(6)
+        break;
+
+    case "Agosto": 
+    case "agosto":
+        fechaDia1.setMonth(7)
+        fechaDia2.setMonth(7)
+        break;
+
+    case "Septiembre": 
+    case "septiembre":
+        fechaDia1.setMonth(8)
+        fechaDia2.setMonth(8)
+        break;
+
+    case "Octubre": 
+    case "octubre":
+        fechaDia1.setMonth(9)
+        fechaDia2.setMonth(9)
+        break;
+
+    case "Noviembre": 
+    case "noviembre":
+        fechaDia1.setMonth(10)
+        fechaDia2.setMonth(10)
+        break;
+
+    case "Diciembre": 
+    case "diciembre":
+        fechaDia1.setMonth(11)
+        fechaDia2.setMonth(11)
+        break;
+
+    default:
+        alert("Mes no válido");
+    }
+    
+    //fecha.getUTCDay()
+    alert(fecha.getUTCMonth())
+
+    
+
+
+</script>
+
+<body>
+    
+</body>
+
+</html>

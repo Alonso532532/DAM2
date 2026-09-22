@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+    // Añado el plugin parcelize
+    id("kotlin-parcelize")
 }
 
 android {
@@ -25,6 +27,12 @@ android {
             }
         }
     }
+
+    // hay que sincronizar el programa
+    buildFeatures{
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11

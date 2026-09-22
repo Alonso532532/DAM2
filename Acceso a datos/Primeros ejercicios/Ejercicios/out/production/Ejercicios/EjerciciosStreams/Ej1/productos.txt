@@ -1,0 +1,7 @@
+Producto{id=1, nombre='Portatil', precio=899.99, descuento=true, tipo=E}
+Producto{id=2, nombre='Raton', precio=15.5, descuento=false, tipo=A}
+Producto{id=3, nombre='Teclado mecanico', precio=79.9, descuento=true, tipo=A}
+Producto{id=4, nombre='Monitor 24', precio=159.99, descuento=false, tipo=E}
+Producto{id=5, nombre='Auriculares', precio=45.0, descuento=true, tipo=A}
+Producto{id=6, nombre='Webcam HD', precio=29.95, descuento=false, tipo=E}
+

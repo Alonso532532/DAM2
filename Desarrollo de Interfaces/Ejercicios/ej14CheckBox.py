@@ -20,7 +20,8 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(casilla)
 
     def imprimirEstado(self, estado):
-        print(estado)
+        print(["Marcado","","Desmarcado"][estado])
+
         
     
 

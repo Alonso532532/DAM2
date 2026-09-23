@@ -16,7 +16,9 @@ public class Ej7 {
 
         // lista.stream().filter(a->a.getCurso().equals("POO")&&a.getNota()>=5).forEach(System.out::println);
 
-        System.out.println(lista.stream().collect(Collectors.groupingBy(a -> a.getCurso(), Collectors.counting())));
+        lista.stream().collect(Collectors.groupingBy(a -> a.getCurso(), Collectors.counting())).forEach((a, b)->{
+            System.out.println(a+" tiene "+b);
+        });
     }
 
     static void listaIn(List<Persona> lista){

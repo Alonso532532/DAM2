@@ -2,10 +2,7 @@ package EjerciciosStreams.Ej4;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Ej4 {
@@ -21,8 +18,9 @@ public class Ej4 {
         }catch (IOException e){
             e.printStackTrace();
         }
+        System.out.println(productos);
         // Es lo mismo
-        System.out.println(productos.stream().collect(Collectors.groupingBy(Producto::getCategoria, Collectors.counting())));
+        System.out.println(productos.stream().collect(Collectors.groupingBy(Producto::getCategoria, Collectors.maxBy(Comparator.comparing(Producto::getPrecio)))));
         Map<String, Long> porCat = productos.stream().collect(Collectors.groupingBy(Producto::getCategoria, Collectors.counting()));
 
         System.out.println(productos.stream().filter(a -> a.precio >= 10 && a.precio <= 20).toList());

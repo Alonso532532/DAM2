@@ -17,9 +17,10 @@ public class Ej3 {
         ));
 
         System.out.println("--- Edad promedio ---");
-        System.out.println(personas.stream().mapToInt(Persona::getEdad).average());
+        System.out.println(personas.stream().mapToInt(Persona::getEdad).average().orElse(0));
         System.out.println("--- Más joven ---");
         System.out.println(personas.stream().sorted(Comparator.comparing(Persona::getEdad)).limit(1).toList().getFirst());
+        System.out.println(personas.stream().min(Comparator.comparing(Persona::getEdad)).get());
         System.out.println("--- Edad > 30 ---");
         System.out.println(personas.stream().filter(a->a.getEdad()>30).toList());
     }

@@ -9,14 +9,14 @@
 
     <ImageView
         android:id="@+id/heroImage"
+        android:src="@android:drawable/ic_menu_camera"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/imagen"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/imagen" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
         android:id="@+id/heroNameEdit"

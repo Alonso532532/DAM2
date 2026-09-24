@@ -1,0 +1,31 @@
+
+C:\Users\dam2\Desktop\Githu\DAM2\PSP>echo Usuario actual: 
+Usuario actual:
+
+C:\Users\dam2\Desktop\Githu\DAM2\PSP>whoami
+b304pc04\dam2
+
+C:\Users\dam2\Desktop\Githu\DAM2\PSP>echo Directorio actual: 
+Directorio actual:
+
+C:\Users\dam2\Desktop\Githu\DAM2\PSP>cd
+C:\Users\dam2\Desktop\Githu\DAM2\PSP
+
+C:\Users\dam2\Desktop\Githu\DAM2\PSP>echo Contenido del directorio: 
+Contenido del directorio:
+
+C:\Users\dam2\Desktop\Githu\DAM2\PSP>dir
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: FE0C-2523
+
+ Directorio de C:\Users\dam2\Desktop\Githu\DAM2\PSP
+
+21/09/2026  16:21    <DIR>          .
+24/09/2026  15:47    <DIR>          ..
+21/09/2026  16:20               352 .gitignore
+24/09/2026  21:17    <DIR>          .idea
+21/09/2026  16:21    <DIR>          out
+21/09/2026  16:20               433 PSP.iml
+24/09/2026  20:50    <DIR>          src
+               2 archivos            785 bytes
+               5 dirs  1.850.021.310.464 bytes libres

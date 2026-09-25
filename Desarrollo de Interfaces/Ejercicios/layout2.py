@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QMainWindow, QHBoxLayout, QWidget, QApplication
+from PyQt6.QtWidgets import QMainWindow, QHBoxLayout, QWidget, QApplication, QVBoxLayout
 from cuadrado import Cuadrado
 
 class MainWindow(QMainWindow):
@@ -9,13 +9,21 @@ class MainWindow(QMainWindow):
 
         plantilla = QHBoxLayout()
 
-        plantilla.addWidget(Cuadrado("red"))
-        plantilla.addWidget(Cuadrado("yellow"))
-        plantilla.addWidget(Cuadrado("lime"))
-        plantilla.addWidget(Cuadrado("green"))
-        plantilla.addWidget(Cuadrado("yellow"))
-        plantilla.addWidget(Cuadrado("red"))
-        plantilla.addWidget(Cuadrado("yellow"))
+        plantillav1 = QVBoxLayout()
+        plantillav2 = QVBoxLayout()
+
+        plantillav1.addWidget(Cuadrado("red"))
+        plantillav1.addWidget(Cuadrado("yellow"))
+        plantillav1.addWidget(Cuadrado("red"))
+
+        plantillav2.addWidget(Cuadrado("red"))
+        plantillav2.addWidget(Cuadrado("yellow"))
+        plantillav2.addWidget(Cuadrado("red"))
+
+        plantilla.addLayout(plantillav1)
+        plantilla.addWidget(Cuadrado("gray"))
+        plantilla.addLayout(plantillav2)
+
 
         # Para aplicar un layout es necesario un widget
 

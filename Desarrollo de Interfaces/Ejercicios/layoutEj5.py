@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QMainWindow, QHBoxLayout, QWidget, QApplication
+from PyQt6.QtWidgets import QMainWindow, QHBoxLayout, QWidget, QApplication, QVBoxLayout, QCheckBox, QLabel, QLineEdit, QPushButton, QGroupBox, QRadioButton, QGridLayout
 from cuadrado import Cuadrado
 
 class MainWindow(QMainWindow):
@@ -7,21 +7,15 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Mi aplicación")
 
-        plantilla = QHBoxLayout()
+        grid = QGridLayout()
 
-        plantilla.addWidget(Cuadrado("red"))
-        plantilla.addWidget(Cuadrado("yellow"))
-        plantilla.addWidget(Cuadrado("lime"))
-        plantilla.addWidget(Cuadrado("green"))
-        plantilla.addWidget(Cuadrado("yellow"))
-        plantilla.addWidget(Cuadrado("red"))
-        plantilla.addWidget(Cuadrado("yellow"))
+        grid.addWidget()
 
         # Para aplicar un layout es necesario un widget
-
         widget = QWidget()
-        widget.setLayout(plantilla)
+        widget.setLayout(plantilla2)
         self.setCentralWidget(widget)
+
 
 app = QApplication([]) # Hago un objeto QApplication
 

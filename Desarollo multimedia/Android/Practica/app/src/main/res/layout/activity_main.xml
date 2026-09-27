@@ -5,22 +5,39 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFEEC9"
     tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/resultadoTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        tools:text="Da igual este texto" />
 
     <View
         android:id="@+id/view2"
         android:layout_width="wrap_content"
         android:layout_height="4dp"
         android:layout_marginTop="130dp"
+        android:background="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/view"
-        tools:layout_editor_absoluteX="0dp"
-        android:background="@color/blue"
-        />
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/campoMulti2"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:hint="0"
+        android:inputType="number"
         app:layout_constraintEnd_toStartOf="@id/resultadoMulti"
         app:layout_constraintStart_toEndOf="@id/campoMulti1"
         app:layout_constraintTop_toTopOf="@+id/campoMulti1" />
@@ -31,6 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
+        android:hint="0"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -40,15 +59,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="24dp"
-        tools:text="TextView"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/campoMulti2" />
+        app:layout_constraintTop_toTopOf="@+id/campoMulti2"
+        tools:text="TextView" />
 
     <EditText
         android:id="@+id/campoSuma2"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:hint="0"
+        android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/resultadoSuma"
         app:layout_constraintStart_toEndOf="@+id/campoSuma1"
         app:layout_constraintTop_toTopOf="@+id/campoSuma1" />
@@ -57,7 +78,8 @@
         android:id="@+id/calcularMult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calcular"
+        android:backgroundTint="@color/blue"
+        android:text="@string/calcular"
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,10 +91,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="24dp"
-        tools:text="TextView"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/campoSuma2" />
+        app:layout_constraintTop_toTopOf="@+id/campoSuma2"
+        tools:text="TextView" />
 
     <EditText
         android:id="@+id/campoSuma1"
@@ -80,6 +102,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+        android:hint="0"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,7 +111,8 @@
         android:id="@+id/calcularSuma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calcular"
+        android:backgroundTint="@color/blue"
+        android:text="@string/calcular"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,8 +123,19 @@
         android:layout_width="wrap_content"
         android:layout_height="4dp"
         android:layout_marginTop="130dp"
-        android:background="@color/blue"
+        android:background="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/moverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/blue"
+        android:text="Ir a pagina 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

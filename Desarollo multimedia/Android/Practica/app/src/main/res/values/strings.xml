@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Practica</string>
+    <string name="app_name">Practice</string>
+    <string name="calcular">Calculate</string>
+    <string name="resultado">Total result %d</string>
 </resources>

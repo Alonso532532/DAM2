@@ -12,6 +12,7 @@ public class Runnable implements java.lang.Runnable {
             }
         }
     }
+
     public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(new Runnable());
         t.start();

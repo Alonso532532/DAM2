@@ -28,8 +28,6 @@
 
     var mes = prompt("De que mes")
 
-    document.write("<h1>"+`${mes.charAt(0).toUpperCase().concat(mes.substring(1))}`+"</h1>")
-
     switch (mes.toLowerCase()) {
         case "enero":
             fechaDia1.setMonth(0)
@@ -80,8 +78,12 @@
             break;
 
         default:
-            alert("Mes no válido");
+            alert("Mes no válido")
+            fechaDia1.setMonth(0)
+            mes="Enero"
     }
+
+    document.write("<h1>"+`${mes.charAt(0).toUpperCase().concat(mes.substring(1))}`+"</h1>")
 
     var diaIni = new Date(fechaDia1.getFullYear(), fechaDia1.getMonth(), 1).getDay()-1;
     var dias = new Date(fechaDia1.getFullYear(), fechaDia1.getMonth()+1, 0).getUTCDate()+1;
@@ -94,7 +96,7 @@
     var fest = festivos[fechaDia1.getMonth()]
     var comprobar = festivos[fechaDia1.getMonth()].length!=0
 
-    alert(diaIni+"-"+dias+"-"+filas+"-"+fest)
+    //alert(diaIni+"-"+dias+"-"+filas+"-"+fest)
 
     var dia = 1
 

@@ -12,6 +12,7 @@ public class Ej8 {
                         new Cancion("Long Hot Summer", "Keith Urban"),
                         new Cancion("It's my Life", "Bon Jovi"),
                         new Cancion("Cherokee", "Europe"),
+                        new Cancion("Summer of 69", "Bryan Adams"),
                         new Cancion("Dolor Fantasma", "Amadeus"),
                         new Cancion("Run To You", "Bryan Adams"),
                         new Cancion("Summer of 69", "Bryan Adams"),

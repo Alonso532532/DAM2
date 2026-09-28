@@ -1,6 +1,8 @@
 package EjerciciosStreams.Ej8;
 
-public class Cancion {
+import java.util.Objects;
+
+public class Cancion{
     String titulo;
     String cantante;
 
@@ -31,5 +33,17 @@ public class Cancion {
                 "titulo='" + titulo + '\'' +
                 ", cantante='" + cantante + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Cancion cancion = (Cancion) o;
+        return Objects.equals(titulo, cancion.titulo) && Objects.equals(cantante, cancion.cantante);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(titulo, cantante);
     }
 }

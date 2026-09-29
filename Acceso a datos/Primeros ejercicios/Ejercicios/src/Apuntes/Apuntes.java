@@ -30,12 +30,48 @@ public class Apuntes {
 
         List<String> lista = new ArrayList<String>(List.of("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non dapibus diam, sed rhoncus leo. In nec elit semper, ullamcorper risus et, mollis lacus. Vestibulum quis tellus eget nisi imperdiet convallis. Praesent et massa augue. Morbi faucibus urna in felis finibus, interdum varius metus iaculis. Nam gravida turpis ut nibh molestie rhoncus. Vivamus scelerisque libero nisl, et ultrices massa efficitur ac. Phasellus efficitur magna in metus consequat, sed molestie arcu venenatis. Maecenas volutpat sodales orci a molestie. Integer vitae pulvinar justo, dictum pulvinar massa. In hendrerit luctus libero, nec ultrices diam consequat et.".split(" ")));
 
-        System.out.println("\n\n==== Simples ====\n\n");
-        System.out.println("---- Empiezan por i o r ----");
+        System.out.println("\n\n==== Simples ====");
+        System.out.println("\n---- Palabras que empiezan por i o r ----\n");
         Matcher matcher = Pattern.compile("\\b[ir]\\w*").matcher(cad);
         while (matcher.find()){
             System.out.println(matcher.group());
         }
+
+        System.out.println("\n---- Primera palabra que empiece por c ----\n");
+        matcher = Pattern.compile("c[a-zA-Z]*").matcher(cad);
+        if (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+
+        System.out.println("\n---- Palabras con longitud de 11 ----\n");
+        matcher = Pattern.compile("\\b[a-zA-Z]{11}\\b").matcher(cad);
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+
+        System.out.println("\n\n==== Look ahead ====\n\n");
+
+        System.out.println("---- Palabras con longitud de 11 y con una p ----\n");
+        System.out.println("< El look ahead va a buscar mientras la condición \"[a-zA-Z]p\"se cumpla, en este caso si hay de 0 a 10 letras y una p se cumplirá >\n");
+        matcher = Pattern.compile("(?=[a-zA-Z]*p)\\b[a-zA-Z]{11}\\b").matcher(cad);
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+
+        System.out.println("\n---- Contraseña con letra mayuscula, carácter especial y de 5 a 10 caracteres ----\n");
+        matcher = Pattern.compile("(?=.*[A-Z])(?=.*[?¿=@%€!¡]).{5,10}").matcher("2123A%!");
+        if (matcher.matches()) {
+            System.out.println(matcher.group());
+        }
+
+        System.out.println("\n\n==== Complejos ====\n\n");
+
+        System.out.println("---- Ip ----\n");
+        matcher = Pattern.compile("((25[0-5]|2[0-4][0-9]|1?[0-9]?[0-9]).){3}(25[0-5]|2[0-4][0-9]|1?[0-9]?[0-9])").matcher("123.212.4.212");
+
+        System.out.println(matcher.matches() ? "Válida "+matcher.group() : "Inválida");
+
+
     }
 
     static void stream(){
@@ -62,15 +98,15 @@ public class Apuntes {
         lista.add(new Producto("Bicicleta estática", 199.99, "Deporte", 0.20));
         lista.add(new Producto("Cuerda para saltar", 8.99, "Deporte", 0.0));
 
-        System.out.println("\n\n==== Valores ====\n\n");
-        System.out.println("---- COUNT ----");
+        System.out.println("\n\n==== Valores ====");
+        System.out.println("\n---- COUNT ----\n");
         System.out.println(lista.stream().count());
 
-        System.out.println("---- MAX/MIN ----");
+        System.out.println("\n---- MAX/MIN ----\n");
         System.out.println(lista.stream().max(Comparator.comparing(Producto::getPrecio)));
 
         // Hago que solo me muestre 2 decimales
-        System.out.println("---- AVG ----");
+        System.out.println("\n---- AVG ----\n");
         System.out.println(Double.valueOf(Math.round(lista.stream().mapToDouble(Producto::getPrecio).average().getAsDouble()*100))/100);
 
         System.out.println("\n\n==== Valores con groupingBy ==== (Si se quiere de un tipo en especifico se hace con filter)\n\n");

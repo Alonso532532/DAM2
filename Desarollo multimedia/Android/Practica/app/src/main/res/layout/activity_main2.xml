@@ -7,25 +7,142 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridElementos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="140dp"
+        android:background="#EBEBEB"
+        android:elevation="20dp"
+        android:paddingVertical="20dp"
+        app:columnCount="2"
+        app:layout_constraintBottom_toTopOf="@+id/botonVolver"
+        app:layout_constraintTop_toBottomOf="@+id/textoSaludo">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/carta1"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#6E373737"
+            app:cardCornerRadius="15dp"
+            app:contentPadding="20dp"
+            app:layout_columnWeight="1">
+
+            <TextView
+                android:id="@+id/textoCarta1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carta 1"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/carta2"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#6E373737"
+            app:cardCornerRadius="15dp"
+            app:contentPadding="20dp"
+            app:layout_columnWeight="1">
+
+            <TextView
+                android:id="@+id/textoCarta2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carta 2"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/carta3"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#6E373737"
+            app:cardCornerRadius="15dp"
+            app:contentPadding="20dp"
+            app:layout_columnWeight="1">
+
+            <TextView
+                android:id="@+id/textoCarta3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carta 3"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/carta4"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#6E373737"
+            app:cardCornerRadius="15dp"
+            app:contentPadding="20dp"
+            app:layout_columnWeight="1">
+
+            <TextView
+                android:id="@+id/textoCarta4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carta 4"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/carta5"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#6E373737"
+            app:cardCornerRadius="15dp"
+            app:contentPadding="20dp"
+            app:layout_columnWeight="1">
+
+            <TextView
+                android:id="@+id/textoCarta5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carta 5"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/carta6"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#6E373737"
+            app:cardCornerRadius="15dp"
+            app:contentPadding="20dp"
+            app:layout_columnWeight="1">
+
+            <TextView
+                android:id="@+id/textoCarta6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carta 6"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.gridlayout.widget.GridLayout>
+
     <TextView
         android:id="@+id/textoSaludo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        tools:text="Wenas"
+        android:layout_marginTop="50dp"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/botonVolver"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Wenas" />
 
     <Button
         android:id="@+id/botonVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
         android:backgroundTint="@color/blue"
         android:text="Volver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,7 +43,7 @@ public class Ej8 {
         System.out.println(canciones.stream().filter(a -> a.cantante.equals("Bon Jovi")).count());
 
         System.out.println("----- 5 -----");
-        System.out.println(canciones.stream().collect(Collectors.groupingBy(Cancion::getCantante, Collectors.counting())));
+        canciones.stream().collect(Collectors.groupingBy(Cancion::getCantante, Collectors.counting())).forEach((c, n)-> System.out.println("El cantante "+c+" tiene "+n+" canciones"));
 
         System.out.println("----- 6 -----");
         canciones.stream().distinct().forEach(System.out::println);

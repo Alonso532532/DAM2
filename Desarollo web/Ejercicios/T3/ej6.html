@@ -9,8 +9,6 @@
 <script>
     var correo = prompt("Dame un correo")
 
-    var reg = RegExp()
-
     if(correo.match("^[a-zA-Z_]+@[a-zA-Z_]+\\.\\w{2,}$")){
         cosas = correo.match("^(\\w+)@(\\w+\\.\\w{2,})$")
         document.write(`Nombre de usuario: ${cosas[1]} <br/>`)

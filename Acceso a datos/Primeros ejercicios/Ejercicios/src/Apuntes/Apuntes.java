@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class Apuntes {
     static void main() {
 
-        //stream();
+        stream();
 
         regex();
 
@@ -90,8 +90,12 @@ public class Apuntes {
         System.out.println("\n---- Con comparable ---- (Por precio total)\n");
         lista.stream().sorted().forEach(System.out::println);
 
-        System.out.println("\n---- Con comparator ---- (Por oferta y si son iguales por nombre)\n");
+        System.out.println("\n---- Con comparator y clase ---- (Por oferta y si son iguales por nombre)\n");
         lista.stream().sorted(new comparadorPorOferta()).forEach(System.out::println);
+
+        System.out.println("\n---- Con comparator ---- (Por categoría y si son iguales por nombre)\n");
+        lista.stream().sorted(Comparator.comparing(Producto::getCategoria).thenComparing(Producto::getNombre)).forEach(System.out::println);
+
     }
 }
 

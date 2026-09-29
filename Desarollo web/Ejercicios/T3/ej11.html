@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    document.write("<button onClick='empezar()'>Epmezar</button>")
+    document.write("<button onClick='terminar()'>Terminar</button>")
+
+    var inicio = Date.now()
+
+    var iniciado = false
+
+    function empezar(){
+        iniciado = true
+        inicio = new Date.now()
+    }
+
+    function terminar(){
+        if (iniciado){
+            iniciado = false
+            document.write()
+        } else {
+            alert("Debes iniciar el contador")
+        }
+    }
+</script>
+<body>
+
+</body>
+</html>

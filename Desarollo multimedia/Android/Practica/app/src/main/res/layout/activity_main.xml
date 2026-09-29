@@ -9,6 +9,16 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/simboloSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/campoSuma1"
+        app:layout_constraintEnd_toStartOf="@+id/campoSuma2"
+        app:layout_constraintStart_toEndOf="@+id/campoSuma1"
+        app:layout_constraintTop_toTopOf="@+id/campoSuma1" />
+
+    <TextView
         android:id="@+id/resultadoTotal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -137,5 +147,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/SimboloX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        app:layout_constraintBottom_toBottomOf="@+id/campoMulti1"
+        app:layout_constraintEnd_toStartOf="@+id/campoMulti2"
+        app:layout_constraintStart_toEndOf="@+id/campoMulti1"
+        app:layout_constraintTop_toTopOf="@+id/campoMulti1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

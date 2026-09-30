@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1678a912-eefc-4cf0-a14f-b7392f58b36d" name="Changes" comment="" />
+    <list default="true" id="1678a912-eefc-4cf0-a14f-b7392f58b36d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ejercicios/src/Apuntes/Apuntes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicios/src/Apuntes/Apuntes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ejercicios/src/EjerciciosStreams/Ej7/Ej7.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicios/src/EjerciciosStreams/Ej7/Ej7.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +28,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Apuntes.executor": "Run",
+    "Application.Ej7.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -29,9 +38,47 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/PC GAMING/Desktop/Githu/DAM2/Acceso a datos/Primeros ejercicios",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.Apuntes">
+    <configuration name="Apuntes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Apuntes.Apuntes" />
+      <module name="Primeros ejercicios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Apuntes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ej7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EjerciciosStreams.Ej7.Ej7" />
+      <module name="Primeros ejercicios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="EjerciciosStreams.Ej7.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Apuntes" />
+        <item itemvalue="Application.Ej7" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

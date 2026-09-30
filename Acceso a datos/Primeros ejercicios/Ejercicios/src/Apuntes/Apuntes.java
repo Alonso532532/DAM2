@@ -1,6 +1,7 @@
 package Apuntes;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -10,10 +11,30 @@ import java.util.stream.Collectors;
 public class Apuntes {
     static void main() {
 
-        stream();
+        //stream();
 
-        regex();
+        //regex();
 
+        herenciaPolimorfismo();
+
+    }
+
+    static void herenciaPolimorfismo() {
+        List<Producto> productos = new ArrayList<>(Arrays.asList(
+                new Actimel("Actimelillo", 0.53, "Bebida", 0.2),
+                new BifrutasToBueno("Bifrutas pequeñico", 0.75, "Bebida", 0.0),
+                new BifrutasToBueno("Bifrutas", 1.25, "Bebida", 0.1)
+        ));
+
+        System.out.println("\n\n==== Herencia y polimorfismo ====");
+        System.out.println("< A una lista de productos le he añadido 2 objetos cuya clase extiende de Producto y he sobreescrito un método >\n");
+        productos.forEach(System.out::println);
+        System.out.println();
+        productos.forEach(a->a.etiqueta());
+
+        System.out.println("< Saco solo los Productos que son Bifrutas >");
+
+        productos.stream().filter(a -> a.getClass() == BifrutasToBueno.class).forEach(System.out::println);
     }
 
     static void regex(){
@@ -49,9 +70,9 @@ public class Apuntes {
             System.out.println(matcher.group());
         }
 
-        System.out.println("\n\n==== Look ahead ====\n\n");
+        System.out.println("\n\n==== Look ahead ====\n");
 
-        System.out.println("---- Palabras con longitud de 11 y con una p ----\n");
+        System.out.println("---- Palabras con longitud de 11 y con una p ----");
         System.out.println("< El look ahead va a buscar mientras la condición \"[a-zA-Z]p\"se cumpla, en este caso si hay de 0 a 10 letras y una p se cumplirá >\n");
         matcher = Pattern.compile("(?=[a-zA-Z]*p)\\b[a-zA-Z]{11}\\b").matcher(cad);
         while (matcher.find()) {
@@ -60,16 +81,34 @@ public class Apuntes {
 
         System.out.println("\n---- Contraseña con letra mayuscula, carácter especial y de 5 a 10 caracteres ----\n");
         matcher = Pattern.compile("(?=.*[A-Z])(?=.*[?¿=@%€!¡]).{5,10}").matcher("2123A%!");
-        if (matcher.matches()) {
-            System.out.println(matcher.group());
-        }
+        System.out.println(matcher.matches() ? "Válida "+matcher.group() : "Inválida");
 
-        System.out.println("\n\n==== Complejos ====\n\n");
 
-        System.out.println("---- Ip ----\n");
+        System.out.println("\n\n==== Complejos ====\n");
+
+        System.out.println("---- Correo ----\n");
+        matcher = Pattern.compile("([a-zA-Z0-9_$#%€-]+)@([a-zA-Z0-9_$#%€-]+)\\.(\\w{2,})").matcher("asorianom@iesch.org");
+
+        System.out.println(matcher.matches() ? "Válida "+matcher.group() : "Inválida");
+
+
+        System.out.println("\n---- Ip ----\n");
         matcher = Pattern.compile("((25[0-5]|2[0-4][0-9]|1?[0-9]?[0-9]).){3}(25[0-5]|2[0-4][0-9]|1?[0-9]?[0-9])").matcher("123.212.4.212");
 
         System.out.println(matcher.matches() ? "Válida "+matcher.group() : "Inválida");
+
+        System.out.println("\n\n==== Sacar grupos ====\n");
+
+        System.out.println("---- Saco el nombre el dominio y el finál ----\n< Es importante que primero encuentre un resultado para podér separarlo >\n");
+        matcher = Pattern.compile("([a-zA-Z0-9_$#%€-]+)@([a-zA-Z0-9_$#%€-]+)\\.(\\w{2,})").matcher("asorianom@iesch.org");
+
+        if (matcher.matches()){
+            System.out.println("Grupo 1: " + matcher.group(1));
+            System.out.println("Grupo 2: " + matcher.group(2));
+            System.out.println("Grupo 3: " + matcher.group(3));
+            System.out.println("Grupo completo: " + matcher.group(0));
+        }
+
 
 
     }
@@ -195,7 +234,7 @@ class Producto implements Comparable<Producto>{
 
     @Override
     public String toString() {
-        return "(Precio total="+(precio-precio*oferta)+") Producto{" +
+        return "(Precio total="+Double.parseDouble(String.valueOf(Math.round((precio-precio*oferta)*100)))/100+") Producto{" +
                 "nombre='" + nombre + '\'' +
                 ", precio=" + precio +
                 ", categoria='" + categoria + '\'' +
@@ -214,5 +253,37 @@ class Producto implements Comparable<Producto>{
         } else {
             return dif==0?0:-1;
         }
+    }
+
+    public void etiqueta(){
+        System.out.println("SIN ETIQUETA");
+    }
+}
+
+class Actimel extends Producto{
+
+    public Actimel(String nombre, Double precio, String categoria, Double oferta) {
+        super(nombre, precio, categoria, oferta);
+    }
+
+    @Override
+    public void etiqueta() {
+        System.out.println("Actimelizate");
+    }
+}
+
+class BifrutasToBueno extends Producto{
+
+    public BifrutasToBueno(String nombre, Double precio, String categoria, Double oferta) {
+        super(nombre, precio, categoria, oferta);
+    }
+
+    @Override
+    public void etiqueta() {
+        System.out.println("Frutas diversas");
+    }
+
+    public void color(String color){
+        System.out.println(color);
     }
 }

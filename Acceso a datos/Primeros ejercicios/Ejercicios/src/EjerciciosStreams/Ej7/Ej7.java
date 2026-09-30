@@ -10,7 +10,7 @@ public class Ej7 {
         List<Persona> lista = new ArrayList<>();
         listaIn(lista);
 
-        // lista.stream().filter(a->a.edad>=18 && a.getCurso().startsWith("A") && a.getNombre().contains("N")).forEach(System.out::println);
+        lista.stream().filter(a->a.edad>=18 && a.getCurso().startsWith("A") && a.getNombre().contains("N")).forEach(System.out::println);
 
         // lista.stream().filter(a->a.edad>=20&&a.edad<=25&&a.getCurso().equals("Acceso a datos")).forEach(System.out::println);
 

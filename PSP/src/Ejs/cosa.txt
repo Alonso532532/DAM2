@@ -1,1 +1,14 @@
-sdadasadadadadaw
+{
+	titulo:"Receta"
+	ingredientes:[
+		{cantidad: "", nombre: "", unidadDeMedida: ""},
+		{cantidad: "", nombre: "", unidadDeMedida: ""},
+		{cantidad: "", nombre: "", unidadDeMedida: ""},
+		{cantidad: "", nombre: "", unidadDeMedida: ""}
+	]
+	realización:""
+	comentarios: [
+		{autor: "", texto:""},
+		{autor: "", texto:""}
+	]
+}

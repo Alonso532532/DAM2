@@ -20,6 +20,21 @@
         app:layout_constraintBottom_toTopOf="@+id/botonVolver"
         app:layout_constraintTop_toBottomOf="@+id/textoSaludo">
 
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_columnSpan="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="Grid"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/carta1"
             android:layout_width="wrap_content"
@@ -27,7 +42,9 @@
             app:cardBackgroundColor="#6E373737"
             app:cardCornerRadius="15dp"
             app:contentPadding="20dp"
-            app:layout_columnWeight="1">
+            app:layout_columnWeight="1"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/black">
 
             <TextView
                 android:id="@+id/textoCarta1"
@@ -61,7 +78,9 @@
             app:cardBackgroundColor="#6E373737"
             app:cardCornerRadius="15dp"
             app:contentPadding="20dp"
-            app:layout_columnWeight="1">
+            app:layout_columnWeight="1"
+            app:layout_column="1">
+
 
             <TextView
                 android:id="@+id/textoCarta3"
@@ -105,22 +124,7 @@
                 android:textColor="#FFFFFF" />
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/carta6"
-            android:layout_width="wrap_content"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="#6E373737"
-            app:cardCornerRadius="15dp"
-            app:contentPadding="20dp"
-            app:layout_columnWeight="1">
 
-            <TextView
-                android:id="@+id/textoCarta6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Carta 6"
-                android:textColor="#FFFFFF" />
-        </com.google.android.material.card.MaterialCardView>
 
     </androidx.gridlayout.widget.GridLayout>
 

@@ -6,30 +6,35 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import org.iesch.practicaej1.databinding.ActivityMainBinding
+import org.iesch.practicaej1.databinding.ActivityHomeBinding
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        binding.botonLogin.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
+        val bundle = intent.extras!!
 
-            intent.putExtra("usuario", binding.editTextLogin.text.ifEmpty { "" }.toString())
+        binding.textoSaludo.text = getString(R.string.saludo, bundle.getString("usuario"))
 
-            startActivity(intent)
+        binding.imageViewPerro.setOnClickListener {
+            startActivity(Intent(this, EdadCaninaActivity::class.java))
+        }
+
+        binding.imageViewSuperHeroe.setOnClickListener {
+            startActivity(Intent(this, HeroActivity::class.java))
         }
 
     }

@@ -32,9 +32,9 @@ public class Apuntes {
         System.out.println();
         productos.forEach(a->a.etiqueta());
 
-        System.out.println("< Saco solo los Productos que son Bifrutas >");
+        System.out.println("< Saco solo los Productos que son Bifrutas e imprimo un método que solo tienen los bifrutas>");
 
-        productos.stream().filter(a -> a.getClass() == BifrutasToBueno.class).forEach(System.out::println);
+        productos.stream().filter(a -> a.getClass() == BifrutasToBueno.class).forEach(a->((BifrutasToBueno) a).color("Verde"));
     }
 
     static void regex(){

@@ -20,7 +20,7 @@ class HeroActivity : AppCompatActivity() {
     // 1 - Creo la variable lateinit para inicializarla luego
     private lateinit var binding: ActivityHeroBinding
 
-    // Vreo la variable que va a manegar el resultado de hacer la foto
+    // Creo la variable que va a manegar el resultado de hacer la foto
     private lateinit var  heroImage: ImageView
     private var heroBitmap: Bitmap? = null
 

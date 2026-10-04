@@ -11,14 +11,13 @@
         android:id="@+id/gridElementos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="10dp"
         android:background="#EBEBEB"
         android:elevation="20dp"
-        android:paddingVertical="20dp"
+        android:paddingVertical="10dp"
         app:columnCount="2"
         app:layout_constraintBottom_toTopOf="@+id/botonVolver"
-        app:layout_constraintTop_toBottomOf="@+id/textoSaludo">
+        app:layout_constraintTop_toBottomOf="@+id/imagen1">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,11 +26,12 @@
             app:layout_columnSpan="2">
 
             <TextView
+                android:id="@+id/textoGrid"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textAlignment="center"
                 android:gravity="center"
-                android:text="Grid"/>
+                android:text="Grid"
+                android:textAlignment="center" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -43,8 +43,8 @@
             app:cardCornerRadius="15dp"
             app:contentPadding="20dp"
             app:layout_columnWeight="1"
-            app:strokeWidth="2dp"
-            app:strokeColor="@color/black">
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp">
 
             <TextView
                 android:id="@+id/textoCarta1"
@@ -78,8 +78,8 @@
             app:cardBackgroundColor="#6E373737"
             app:cardCornerRadius="15dp"
             app:contentPadding="20dp"
-            app:layout_columnWeight="1"
-            app:layout_column="1">
+            app:layout_column="1"
+            app:layout_columnWeight="1">
 
 
             <TextView
@@ -125,7 +125,6 @@
         </com.google.android.material.card.MaterialCardView>
 
 
-
     </androidx.gridlayout.widget.GridLayout>
 
     <TextView
@@ -149,4 +148,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imagen1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoSaludo"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imagen2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imagen1"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

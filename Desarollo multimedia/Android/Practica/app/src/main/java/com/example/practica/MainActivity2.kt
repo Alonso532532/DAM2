@@ -1,8 +1,10 @@
 package com.example.practica
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,10 +25,21 @@ class MainActivity2 : AppCompatActivity() {
         // hago un bundle para recibir los datos
         val bundle = intent.extras!!
 
+        // Imagen 1
+        findViewById<ImageView>(R.id.imagen1).setImageBitmap(intent.getParcelableExtra("imagen"))
+
+        // Imagen 2
+        val ruta = intent.getStringExtra("path_foto")
+        if (!ruta.isNullOrEmpty()) {
+            val bitmap = BitmapFactory.decodeFile(ruta)
+            findViewById<ImageView>(R.id.imagen2).setImageBitmap(bitmap)
+        }
+
         findViewById<TextView>(R.id.textoSaludo).text = bundle.getString("textico").toString().ifEmpty { "Vacío" }
 
         findViewById<Button>(R.id.botonVolver).setOnClickListener {
             startActivity(Intent(this,MainActivity::class.java))
         }
+
     }
 }

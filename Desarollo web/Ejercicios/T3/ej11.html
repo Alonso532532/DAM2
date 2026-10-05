@@ -9,19 +9,20 @@
     document.write("<button onClick='empezar()'>Epmezar</button>")
     document.write("<button onClick='terminar()'>Terminar</button>")
 
-    var inicio = Date.now()
+    var inicio
 
     var iniciado = false
 
     function empezar(){
         iniciado = true
-        inicio = new Date.now()
+        inicio = new Date
+        console.log(inicio)
     }
 
     function terminar(){
         if (iniciado){
             iniciado = false
-            document.write()
+            alert("Tiempo transcurrido: "+((Date.now() - inicio) / 1000).toString())
         } else {
             alert("Debes iniciar el contador")
         }

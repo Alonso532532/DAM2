@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.practica.model.Datos
 
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,16 +27,20 @@ class MainActivity2 : AppCompatActivity() {
         val bundle = intent.extras!!
 
         // Imagen 1
-        findViewById<ImageView>(R.id.imagen1).setImageBitmap(intent.getParcelableExtra("imagen"))
+//        findViewById<ImageView>(R.id.imagen1).setImageBitmap(intent.getParcelableExtra("imagen"))
+        // Con objeto
+        findViewById<ImageView>(R.id.imagen1).setImageBitmap(intent.getParcelableExtra<Datos>("objeto")?.imagen1)
 
         // Imagen 2
-        val ruta = intent.getStringExtra("path_foto")
+//        val ruta = intent.getStringExtra("path_foto")
+        // Con objeto
+        val ruta = intent.getParcelableExtra<Datos>("objeto")?.imagen2
         if (!ruta.isNullOrEmpty()) {
             val bitmap = BitmapFactory.decodeFile(ruta)
             findViewById<ImageView>(R.id.imagen2).setImageBitmap(bitmap)
         }
 
-        findViewById<TextView>(R.id.textoSaludo).text = bundle.getString("textico").toString().ifEmpty { "Vacío" }
+        findViewById<TextView>(R.id.textoSaludo).text = intent.getParcelableExtra<Datos>("objeto")?.resultado.toString().ifEmpty { "Vacío" }
 
         findViewById<Button>(R.id.botonVolver).setOnClickListener {
             startActivity(Intent(this,MainActivity::class.java))

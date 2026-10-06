@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.drawToBitmap
 import com.example.practica.databinding.ActivityMainBinding
+import com.example.practica.model.Datos
 import java.io.File
 
 
@@ -104,11 +105,15 @@ class MainActivity : AppCompatActivity() {
         binding.moverse.setOnClickListener {
             var intent = Intent(this, MainActivity2::class.java)
 
-            intent.putExtra("textico", binding.resultadoTotal.text.toString())
+            val objeto = Datos(binding.resultadoTotal.text.toString(), fotoBitmap, picturePath)
 
-            intent.putExtra("imagen", fotoBitmap)
+            intent.putExtra("objeto",objeto)
 
-            intent.putExtra("path_foto", picturePath)
+//            intent.putExtra("textico", binding.resultadoTotal.text.toString())
+//
+//            intent.putExtra("imagen", fotoBitmap)
+//
+//            intent.putExtra("path_foto", picturePath)
 
             startActivity(intent)
         }

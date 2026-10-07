@@ -16,7 +16,7 @@ class MainWindow(QMainWindow):
 
         barra = QToolBar("Barra de herramientas")
 
-        # Boton Se añadirá luego en la interfáz ===========================================================================================>
+        # Boton Se añadirá luego en el menú ===========================================================================================>
 
         # Botón para barras
         # Le añado un icono pero se carga el texto de "Botón"
@@ -28,12 +28,9 @@ class MainWindow(QMainWindow):
 
         barra.addAction(boton)
 
-
-        self.addToolBar(barra)
-
-        barra.addSeparator
+        barra.addSeparator()
         
-        # Boton 2 Se añadirá luego en la interfáz ===========================================================================================>
+        # Boton 2 Se añadirá luego en el menú ===========================================================================================>
 
         boton2 = QAction(QIcon("Ejercicios/fugue-icons-3.5.6/icons/smiley-sad.png"),"Botón2", self)
 
@@ -49,11 +46,33 @@ class MainWindow(QMainWindow):
         barra.addWidget(QCheckBox("Iker"))
 
         # Barra ===========================================================================================>
-
+        # Añado la barra
+        self.addToolBar(barra)
         # Le añado un tamaño al icono
         barra.setIconSize(QSize(16,16))
 
         self.setStatusBar(QStatusBar(self))
+
+        # Menu ===========================================================================================>
+
+        menu = self.menuBar()
+        # El "&" hace que al presionar "Alt" se seleccióne
+        menuArchivo = menu.addMenu("&Archivo")
+        menuEditar = menu.addMenu("&Editar")
+        menuInsertar = menu.addMenu("&Insertar")
+        # Le añado una de las funciónes creadas anteriormente
+        menuArchivo.addAction(boton)
+        menuArchivo.addAction(boton2)
+        menuArchivo.addSeparator()
+        
+        # Añado un submenú con más opciónes
+        #menuArchivo.addMenu("Más")
+
+        menuMas=menuArchivo.addMenu("Más")
+        menuMas.addAction(boton)
+        menuMas.addAction(boton2)
+
+
 
     def botonpulsado(self, s):
         print(s)

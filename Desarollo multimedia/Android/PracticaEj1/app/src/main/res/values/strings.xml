@@ -22,4 +22,6 @@
     <string name="texto_del_boton">Calculate</string>
     <string name="texto_respuesta">If you where a dog, you\'ll have %d</string>
     <string name="error_vacio">You have to introduce an age</string>
+
+    <string name="botonSiguiente">Next →</string>
 </resources>

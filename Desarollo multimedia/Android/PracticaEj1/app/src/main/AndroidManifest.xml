@@ -48,6 +48,14 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
+        <activity
+            android:name=".QuizzPregunta"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".QuizzRespuesta"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

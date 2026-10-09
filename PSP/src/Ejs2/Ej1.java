@@ -13,7 +13,7 @@ public class Ej1 {
 
             Process proceso = new ProcessBuilder(sc.nextLine()).start();
             proceso.waitFor();
-            System.out.println("Proceso finalizado"+proceso.exitValue());
+            System.out.println("Proceso finalizado - "+proceso.exitValue());
 
         }catch (IOException e){
             e.printStackTrace();

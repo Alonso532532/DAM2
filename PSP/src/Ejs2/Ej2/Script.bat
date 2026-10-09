@@ -1,6 +1,0 @@
-echo Usuario actual:
-whoami
-echo Directorio actual:
-cd
-echo Contenido del directorio:
-dir

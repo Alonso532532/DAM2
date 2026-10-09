@@ -9,7 +9,7 @@
     <string name="buenosDias">Buenos días</string>
     <string name="edadCanina">Edad canina</string>
     <string name="heroes">Super Heroes</string>
-    <string name="quizz">Quizzes</string>
+    <string name="quizz">Preguntas</string>
     <string name="conf">Configuración</string>
     <string name="favoritos">Favoritos</string>
     <string name="cerrarSesion">Cerrar sesión</string>
@@ -23,4 +23,7 @@
     <string name="texto_del_boton">Calcular</string>
     <string name="texto_respuesta">Si fueras un perro tendrías %d años</string>
     <string name="error_vacio">Tienes que introducir una edad</string>
+
+    <string name="botonSiguiente">Siguiente →</string>
+
 </resources>

@@ -23,5 +23,29 @@
     <string name="texto_respuesta">If you where a dog, you\'ll have %d</string>
     <string name="error_vacio">You have to introduce an age</string>
 
-    <string name="botonSiguiente">Next →</string>
+    <string name="botonSiguiente">Send →</string>
+    <string name="botonSiguiente2">Next →</string>
+
+    <string name="Pregunta1">What's the result for this operation</string>
+    <string name="textoPregunta1">5x5=?</string>
+    <string name="op11">20</string>
+    <string name="op12">25</string>
+
+
+    <string name="Pregunta2">¿Is this java code line ok?</string>
+    <string name="textoPregunta2">String a = "Hello world";</string>
+    <string name="op21">Yes</string>
+    <string name="op22">No</string>
+
+    <string name="Pregunta3">¿What possition are you selecting on this java code line?</string>
+    <string name="textoPregunta3">array[1]</string>
+    <string name="op31">the first one</string>
+    <string name="op32">the second one</string>
+
+    <string name="errorGrande">Wrong</string>
+    <string name="errorPequeño">You've chosen the incorrect option</string>
+
+    <string name="aciertoGrande">Correct</string>
+    <string name="aciertoPequeño">You've chosen the incorrect option</string>
+
 </resources>

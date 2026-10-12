@@ -24,6 +24,27 @@
     <string name="texto_respuesta">Si fueras un perro tendrías %d años</string>
     <string name="error_vacio">Tienes que introducir una edad</string>
 
-    <string name="botonSiguiente">Siguiente →</string>
+    <string name="botonSiguiente">Enviar →</string>
+    <string name="botonSiguiente2">Siguiente →</string>
 
+    <string name="Pregunta1">¿Cuál es el resultado de esta operación?</string>
+    <string name="textoPregunta1">5x5=?</string>
+    <string name="op11">20</string>
+    <string name="op12">25</string>
+
+    <string name="Pregunta2">¿Es correcta la creación de esta variable en java?</string>
+    <string name="textoPregunta2">String a = "Hello world";</string>
+    <string name="op21">Yes</string>
+    <string name="op22">No</string>
+
+    <string name="Pregunta3">¿Que elemento se seleccióna en esta línea de código java?</string>
+    <string name="textoPregunta3">array[0]</string>
+    <string name="op31">the first one</string>
+    <string name="op32">the second one</string>
+
+    <string name="errorGrande">Fallo</string>
+    <string name="errorPequeño">Has elegido la opción incorrecta</string>
+
+    <string name="aciertoGrande">Correcto</string>
+    <string name="aciertoPequeño">Has elegido la opción correcta</string>
 </resources>

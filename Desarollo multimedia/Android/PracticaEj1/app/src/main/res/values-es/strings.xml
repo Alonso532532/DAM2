@@ -26,6 +26,8 @@
 
     <string name="botonSiguiente">Enviar →</string>
     <string name="botonSiguiente2">Siguiente →</string>
+    <string name="botonRepetir">Repetir</string>
+
 
     <string name="Pregunta1">¿Cuál es el resultado de esta operación?</string>
     <string name="textoPregunta1">5x5=?</string>
@@ -43,8 +45,10 @@
     <string name="op32">the second one</string>
 
     <string name="errorGrande">Fallo</string>
-    <string name="errorPequeño">Has elegido la opción incorrecta</string>
+    <string name="errorPequeno">Has elegido la opción incorrecta</string>
 
     <string name="aciertoGrande">Correcto</string>
-    <string name="aciertoPequeño">Has elegido la opción correcta</string>
+    <string name="aciertoPequeno">Has elegido la opción correcta</string>
+
+    <string name="errorToast">Tienes que elegir una opción</string>
 </resources>

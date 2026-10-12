@@ -25,8 +25,9 @@
 
     <string name="botonSiguiente">Send →</string>
     <string name="botonSiguiente2">Next →</string>
+    <string name="botonRepetir">Repeat</string>
 
-    <string name="Pregunta1">What's the result for this operation</string>
+    <string name="Pregunta1">What is the result for this operation</string>
     <string name="textoPregunta1">5x5=?</string>
     <string name="op11">20</string>
     <string name="op12">25</string>
@@ -43,9 +44,10 @@
     <string name="op32">the second one</string>
 
     <string name="errorGrande">Wrong</string>
-    <string name="errorPequeño">You've chosen the incorrect option</string>
+    <string name="errorPequeno">You have chosen the incorrect option</string>
 
     <string name="aciertoGrande">Correct</string>
-    <string name="aciertoPequeño">You've chosen the incorrect option</string>
+    <string name="aciertoPequeno">You have chosen the incorrect option</string>
 
+    <string name="errorToast">You have to chosen an option</string>
 </resources>

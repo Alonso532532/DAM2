@@ -46,7 +46,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewQuizz"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="60dp"
@@ -59,19 +59,19 @@
         android:id="@+id/textoGrande"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        tools:text="TextView"
         android:textColor="@color/black"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewQuizz" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textoPequeño"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        tools:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textoGrande" />

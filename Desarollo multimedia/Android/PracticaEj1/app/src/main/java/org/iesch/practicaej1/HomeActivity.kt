@@ -38,7 +38,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.imageViewQuizzes.setOnClickListener {
-            startActivity(Intent(this, QuizzPregunta::class.java))
+            startActivity(Intent(this, QuizzPregunta::class.java).putExtra("pagina", 1))
         }
     }
 }

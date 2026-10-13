@@ -1,3 +1,4 @@
+import 'package:contador/presentation/screens/contador_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -15,9 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // Modo oscuro, ".light" para blanco
       theme: ThemeData.dark(),
-      home: Scaffold(
-        body: Center(
-          child: Text('Hola a Dam 2')))
+      home: ContadorScreen()
     );
   }
 

@@ -14,8 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // Para quitar el simbolo de "debug"
       debugShowCheckedModeBanner: false,
-      // Modo oscuro, ".light" para blanco
-      theme: ThemeData.dark(),
+      // Tema de la app, ".light" para blanco
+      theme: ThemeData.dark(
+        useMaterial3: true
+      ),
       home: ContadorScreen()
     );
   }

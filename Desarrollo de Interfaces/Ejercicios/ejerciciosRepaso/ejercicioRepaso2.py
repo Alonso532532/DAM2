@@ -1,7 +1,6 @@
-from PyQt6.QtWidgets import QMainWindow, QDateEdit, QComboBox, QHBoxLayout, QTextEdit, QWidget, QApplication, QVBoxLayout, QPushButton, QStackedLayout, QTabWidget, QLabel, QLineEdit, QCheckBox, QToolBar, QStatusBar
+from PyQt6.QtWidgets import QMainWindow, QMessageBox, QDateEdit, QComboBox, QHBoxLayout, QTextEdit, QWidget, QApplication, QVBoxLayout, QPushButton, QStackedLayout, QTabWidget, QLabel, QLineEdit, QCheckBox, QToolBar, QStatusBar
 from PyQt6.QtGui import QAction, QIcon
-from PyQt6.QtCore import Qt, QSize, QDate
-from cuadrado import Cuadrado  
+from PyQt6.QtCore import Qt, QSize, QDate  
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -31,7 +30,7 @@ class MainWindow(QMainWindow):
         self.fechaCalendar = QDateEdit()
 
         self.fechaCalendar.setCalendarPopup(True)
-        self.fechaCalendar.setMinimumDate(QDate(2006,1,1))
+        self.fechaCalendar.setDate(QDate.currentDate())
 
         fechaHL.addWidget(self.fechaLabel)
         fechaHL.addWidget(self.fechaCalendar)
@@ -45,17 +44,9 @@ class MainWindow(QMainWindow):
         departamentoHL.addWidget(self.departamentoLabel)
         departamentoHL.addWidget(self.departamentoCombo)
         # <=================================================>
-        descripcionHL = QHBoxLayout()
-
-        self.descripcionLabel = QLabel("Descripción:")
-        self.descripcionText = QTextEdit()
-
-        descripcionHL.addWidget(self.descripcionLabel)
-        descripcionHL.addWidget(self.descripcionText)
-        # <=================================================>
         botonesAbajo = QHBoxLayout()
 
-        self.boton1 = QPushButton("Grabar")
+        self.boton1 = QPushButton("Enviar")
         self.boton2 = QPushButton("Reset")
 
         self.boton1.pressed.connect(self.escribir)
@@ -70,7 +61,6 @@ class MainWindow(QMainWindow):
         layoutV.addLayout(apellidosHL)
         layoutV.addLayout(fechaHL)
         layoutV.addLayout(departamentoHL)
-        layoutV.addLayout(descripcionHL)
         layoutV.addLayout(botonesAbajo)
 
         contenedor = QWidget()
@@ -79,18 +69,31 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(contenedor)
 
     def escribir(self):
-        #self.descripcionText.setText(f"{self.nombreEdit.text()}\n{self.apellidosEdit.text()}\n{self.fechaCalendar.text()}\n{self.departamentoCombo.currentText()}")
-        # O
-        self.descripcionText.setText(self.nombreEdit.text())
-        self.descripcionText.append(self.apellidosEdit.text())
-        self.descripcionText.append(self.fechaCalendar.text())
-        self.descripcionText.append(self.departamentoCombo.currentText())
+        if self.nombreEdit.text() != "" and self.apellidosEdit.text() != "":
+            dlg = QMessageBox(self)
+            dlg.setWindowTitle("Confirmación")
+            dlg.setText(f"Si eres {self.nombreEdit.text()} {self.apellidosEdit.text()} pulsa sí")
+            # Si le asigno nuevos botónes los anteriores se pierden
+            dlg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+
+            if dlg.exec() == QMessageBox.StandardButton.Yes:
+                self.close()
+            else:
+                self.nombreEdit.clear()
+                self.apellidosEdit.clear()
+        else:
+            dlg = QMessageBox(self)
+            dlg.setWindowTitle("Error")
+            dlg.setText("Debes rellenar los campos nombre y apellidos")
+            # Si le asigno nuevos botónes los anteriores se pierden
+            dlg.setStandardButtons(QMessageBox.StandardButton.Ok)
+            dlg.exec()
+
     
     def reset(self):
-        self.descripcionText.clear()
         self.apellidosEdit.clear()
         self.nombreEdit.clear()
-        self.fechaCalendar.setDate(QDate(2006,1,1))
+        self.fechaCalendar.setDate(QDate.currentDate())
         self.departamentoCombo.setCurrentIndex(0) 
 
 

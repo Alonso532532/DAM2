@@ -1,6 +1,7 @@
 from PyQt6.QtGui import QColor, QPalette
 from PyQt6.QtWidgets import QWidget
 
+
 class Cuadrado(QWidget):
     def __init__(self, color):
         super().__init__()

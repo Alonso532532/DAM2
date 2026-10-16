@@ -1,7 +1,6 @@
 from PyQt6.QtWidgets import QMainWindow, QHBoxLayout, QWidget, QApplication, QVBoxLayout, QPushButton, QStackedLayout, QTabWidget, QLabel, QLineEdit, QCheckBox, QToolBar, QStatusBar, QDialog, QDialogButtonBox
 from PyQt6.QtGui import QAction, QIcon
 from PyQt6.QtCore import Qt, QSize
-from cuadrado import Cuadrado  
 
 class CustomDialog(QDialog):
     # Pongo  ", parent=None" y luego "parent" en "init" para poder pasarle un padre al crearlo

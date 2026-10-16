@@ -1,10 +1,9 @@
 from PyQt6.QtWidgets import QMainWindow, QHBoxLayout, QWidget, QApplication, QVBoxLayout, QPushButton, QStackedLayout, QTabWidget, QLabel, QLineEdit, QCheckBox, QToolBar, QStatusBar, QDialog
 from PyQt6.QtGui import QAction, QIcon
 from PyQt6.QtCore import Qt, QSize
-from cuadrado import Cuadrado  
-from dialogs import CustomDialog
 
 class MainWindow(QMainWindow):
+    cont = 0
 
     def __init__(self):
         super().__init__()
@@ -18,12 +17,11 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(boton)
         
     def pulsado(self, s):
+        # Un dialogo para la ventana
         # Aquí al especificarle shelf le estoy diciendo quien es su padre para que salga con un tamaño razonable
-        dlg = CustomDialog(self)
-        if dlg.exec():
-            print("El usuario ha aceptado")
-        else:
-            print("El usuario ha rechazado")
+        dlg = QDialog(self)
+        dlg.setWindowTitle("Cuadro de dialogo")
+        dlg.exec()
 
 # Ejecución de la app
 app = QApplication([]) # Hago un objeto QApplication

@@ -29,31 +29,40 @@ class ColaTareas {
 
     Queue<Integer> cola = new ArrayBlockingQueue<>(3);
 
-    public synchronized boolean producir(Integer num) throws InterruptedException {
-        while (true) {
-            if (cola.offer(num)) {
-                notifyAll();
-                return true;
-            } else {
+    public Integer getCont() {
+        return cont;
+    }
+
+    public synchronized void producir(Integer num, String nombre) throws InterruptedException {
+        boolean terminado = true;
+        while (terminado && cont<10) {
+            if (!cola.offer(num)) {
+                System.out.println("[" + nombre + "] - En espera");
                 wait();
+            } else {
+                System.out.println("[" + nombre + "] - Ha producido: " + num);
+                notifyAll();
+                terminado = false;
             }
+            //Thread.sleep(500);
         }
     }
 
-    public synchronized Integer consumir() throws InterruptedException {
-        while (true) {
-            try {
-                Integer num = cola.poll();
-                if (num != null) {
-                    notifyAll();
-                    cont++;
-                    return num;
-                }
-            } catch (NoSuchElementException e) {
+    public synchronized void consumir(String nombre) throws InterruptedException {
+        boolean terminado = true;
+        while (terminado && cont<10) {
+            Integer num = cola.poll();
+            if (num == null){
+                System.out.println("[" + nombre + "] - En espera");
                 wait();
+            } else {
+                System.out.println("["+nombre+"] - Ha consumido: "+num);
+                notifyAll();
+                terminado = false;
+                cont++;
             }
+            //Thread.sleep(800);
         }
-
     }
 }
 
@@ -69,15 +78,10 @@ class Productor implements Runnable {
     @Override
     public void run() {
         try {
+            Thread.sleep(500);
             for (int i = 1; i <= 10; i++) {
                 Thread.sleep(500);
-                boolean completado = true;
-                while (completado) {
-                    if (cola.producir(i)){
-                        System.out.println("["+nombre+"] Tarea producida: "+i);
-                        completado = false;
-                    }
-                }
+                cola.producir(i, nombre);
             }
         } catch (InterruptedException e){
             e.printStackTrace();
@@ -97,16 +101,9 @@ class Consumidor implements Runnable {
     @Override
     public void run() {
         try {
-            while (true) {
-                boolean completado = true;
-                while (completado) {
-                    Integer num = cola.consumir();
-                    if (num != null){
-                        System.out.println("["+nombre+"] Tarea consumida: "+num);
-                        completado = false;
-                    }
-                }
+            while (cola.getCont()<10) {
                 Thread.sleep(800);
+                cola.consumir(nombre);
             }
         } catch(InterruptedException e){
             e.printStackTrace();

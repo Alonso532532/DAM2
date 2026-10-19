@@ -37,7 +37,7 @@ public class ej1 {
 class GestorDescargas {
     private int descargasCompletadas = 0;
 
-    public void registrarDescarga(String nombreArchivo){
+    public synchronized void registrarDescarga(String nombreArchivo){
         descargasCompletadas++;
         System.out.println(nombreArchivo+" descargado. Total: "+descargasCompletadas);
     }

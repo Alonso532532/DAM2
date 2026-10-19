@@ -7,16 +7,21 @@
 </head>
 <body>
 <button id="botoncico">Generar numero</button>
+<ul>
 
+</ul>
 <script>
-    let lista = []
 
-    document.getElementById("botoncico").onclick=generarNum
+    document.write("<ul id=\"lista\">")
 
-    function generarNum(){
-        lista.push(parseInt(Math.random()*100+1))
-        console.log(lista[lista.length-1])
+    document.getElementById("botoncico").onclick=()=>{
+
+        var num = parseInt(Math.random()*100+1)
+        document.getElementById("lista").innerHTML += `<li>${num}</li>`
+
     }
+
+    document.write("</ul>")
 </script>
 </body>
 </html>

@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table, th, td {
+            border: 2px solid rgb(0, 179, 27);
+            border-collapse: collapse;
+            text-align: center;
+            padding: 6px;
+        }
+    </style>
 </head>
 <script>
     let horario=[
@@ -16,16 +24,54 @@
             ["DWC", "PMDM", "PMDM", "PSP", "DI"]
         ];
 
+
+    let dias=["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"]
+
     let hora = new Date("1995-12-17T15:45:00");
 
-    document.write("")
+    document.write("<table>")
 
-    for (let i = 0; i < array.length+1; i++) {
-        
+    for (let i = 0; i < horario.length+1; i++) {
+        document.write("<tr>")
+        for (let j = 0; j < dias.length+1; j++){
+            if(i==0){
+                if(j==0){
+                    document.write("<th></th>")
+                }else{
+                    document.write(`<th>${dias[j-1]}</th>`)
+                }
+            }else{
+                if(j==0){
+                    var hini
+                    var hfin
+                    if(i==4){
+                        hini = hora.getHours()+":"+hora.getMinutes()
+                        hora.setMilliseconds(hora.getMilliseconds()+15*60*1000)
+                        hfin = hora.getHours()+":"+hora.getMinutes()
+                    } else {
+                        hini = hora.getHours()+":"+hora.getMinutes()
+                        hora.setMilliseconds(hora.getMilliseconds()+50*60*1000)
+                        hfin = hora.getHours()+":"+hora.getMinutes()
+                        if(i!=3){
+                            hora.setMilliseconds(hora.getMilliseconds()+5*60*1000)
+                        }
+                    }
+                    document.write(`<td>${hini}-${hfin}</td>`)
+                }else{
+                    document.write(`<td>${horario[i-1][j-1]}</td>`)
+                }
+            }
+        }
+        document.write("</tr>")
     }
+
+    document.write("</table>")
 
 </script>
 <body>
+    <table>
+        <tr></tr>
+    </table>
 
 </body>
 </html>

@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <button id="calcular" >Calcular</button>
+    <button id="calcular">Calcular</button>
 
     <script>
         document.write("<table id=\"tabla\">")
@@ -32,8 +32,25 @@
         document.write("</table>")
 
         document.getElementById("calcular").onclick=()=>{
+            
+            for (let i = 2; i <= 100; i++) {
+                //console.log(`---------------${i}----------------`)
+                var divisores = 0
 
-            document.getElementById("10").style("background-color: black;")
+                for (let j = 2; j < i; j++) {
+                    
+                    if(i%j==0){
+                        //console.log(`${i}/${j}`)
+                        divisores++
+                    }
+                    
+                }
+                //console.log(`--${divisores}--`)
+                if (divisores == 1) document.getElementById(i-1).style.backgroundColor = "Yellow"
+
+                
+            }
+
 
         }
     </script>

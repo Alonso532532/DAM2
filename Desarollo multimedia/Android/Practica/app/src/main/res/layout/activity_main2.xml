@@ -9,31 +9,20 @@
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridElementos"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="10dp"
         android:background="#EBEBEB"
         android:elevation="20dp"
         android:paddingVertical="10dp"
-        app:columnCount="2"
+        app:columnCount="5"
         app:layout_constraintBottom_toTopOf="@+id/botonVolver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagen1">
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_columnSpan="2">
-
-            <TextView
-                android:id="@+id/textoGrid"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="Grid"
-                android:textAlignment="center" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/carta1"
@@ -50,7 +39,7 @@
                 android:id="@+id/textoCarta1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Carta 1"
+                android:text="1"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -61,13 +50,13 @@
             app:cardBackgroundColor="#6E373737"
             app:cardCornerRadius="15dp"
             app:contentPadding="20dp"
-            app:layout_columnWeight="1">
+            app:layout_columnWeight="@integer/material_motion_duration_long_2">
 
             <TextView
                 android:id="@+id/textoCarta2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Carta 2"
+                android:text="2"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -78,7 +67,6 @@
             app:cardBackgroundColor="#6E373737"
             app:cardCornerRadius="15dp"
             app:contentPadding="20dp"
-            app:layout_column="1"
             app:layout_columnWeight="1">
 
 
@@ -86,7 +74,7 @@
                 android:id="@+id/textoCarta3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Carta 3"
+                android:text="3"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -103,7 +91,7 @@
                 android:id="@+id/textoCarta4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Carta 4"
+                android:text="4"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -120,7 +108,7 @@
                 android:id="@+id/textoCarta5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Carta 5"
+                android:text="5"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.card.MaterialCardView>
 

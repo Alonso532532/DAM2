@@ -1,0 +1,16 @@
+Crear carpeta en local y abrirla desde VSC
+Añadir extensiones
+● python
+● PYQT Integration
+● Qt for Python
+
+Crear entorno virtual (desde la Terminal)
+python -m venv App (se añadirá contenido a nuestra carpeta)
+cd App
+cd Scripts
+.\activate
+pip install PyQt6
+
+Instalar Qt Designer
+pip install PySide6 (instalar Qt Designer)
+pyside6-designer (ejecutar Qt Designer)

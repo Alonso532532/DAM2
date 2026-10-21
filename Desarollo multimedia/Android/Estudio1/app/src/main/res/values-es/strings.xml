@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rojo o azul</string>
+    <string name="textoArriba">Rojo o Azul</string>
+    <string name="textoArriba2">¿Cuanto vas a apostar?</string>
+    <string name="botonReinicio">Reiniciar</string>
+    <string name="botonAceptar">Al lio</string>
+    <string name="textoBarra">Porcentaje de apuesta</string>
+    <string name="max">Máximo obtenido %d€</string>
+    <string name="ronda">Ronda %d</string>
+    <string name="dinero">Tienes:</string>
+    <string name="azul">AZUL</string>
+    <string name="rojo">ROJO</string>
+    <string name="volver">Volver</string>
+    <string name="ganar">Has ganado!!, Click aquí para volver</string>
+    <string name="perder">Has perdido, Click aquí para volver</string>
+
+</resources>

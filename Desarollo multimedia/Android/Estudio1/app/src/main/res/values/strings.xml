@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Red or Blue</string>
+    <string name="textoArriba">Red or Blue</string>
+    <string name="textoArriba2">How much are you going to bet?</string>
+    <string name="botonReinicio">Reset</string>
+    <string name="botonAceptar">Let`s go gambling</string>
+    <string name="textoBarra">Bet percentage</string>
+    <string name="max">Maximum reached: %d€</string>
+    <string name="ronda">Round %d</string>
+    <string name="dinero">You have:</string>
+    <string name="azul">BLUE</string>
+    <string name="rojo">RED</string>
+    <string name="volver">Return</string>
+    <string name="ganar">You won!!, Click here to return</string>
+    <string name="perder">You lost, Click here to return</string>
+</resources>

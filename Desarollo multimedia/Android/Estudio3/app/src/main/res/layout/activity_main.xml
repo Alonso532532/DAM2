@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Construye tu card "
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout1" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout1"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:columnCount="3"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTexto">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cartaTexto1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="true"
+            app:layout_columnWeight="1">
+
+            <TextView
+                android:id="@+id/texto1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="Pascuals.inc" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cartaTexto2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:layout_columnWeight="1">
+
+            <TextView
+                android:id="@+id/texto2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="Carta to guapa" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cartaTexto3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:layout_columnWeight="1">
+
+            <TextView
+                android:id="@+id/texto3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="Daniel Remón peon de obra" />
+        </androidx.cardview.widget.CardView>
+    </androidx.gridlayout.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/textTexto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Texto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout2"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:columnCount="3"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textColor">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cartaColor1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#FF8B8B"
+            app:cardBackgroundColor="#FF8B8B"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="true"
+            app:layout_columnWeight="1" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cartaColor2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#ADB9FF"
+            app:cardBackgroundColor="#ADB9FF"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:layout_columnWeight="1" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cartaColor3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#DCDBDB"
+            app:cardBackgroundColor="#DCDBDB"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:layout_columnWeight="1" />
+    </androidx.gridlayout.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/textImagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Imagen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout2" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout3"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        app:columnCount="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textImagen">
+
+        <ImageView
+            android:id="@+id/imagen1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/blindaje"
+            android:scaleType="fitCenter"
+            app:layout_columnWeight="1"
+            app:srcCompat="@drawable/blindaje"
+            tools:srcCompat="@drawable/blindaje" />
+
+        <ImageView
+            android:id="@+id/imagen2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/contrasena"
+            android:scaleType="fitCenter"
+            app:layout_columnWeight="1"
+            app:srcCompat="@drawable/contrasena"
+            tools:srcCompat="@drawable/contrasena" />
+
+        <ImageView
+            android:id="@+id/imagen3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/senal"
+            android:scaleType="fitCenter"
+            app:layout_columnWeight="1"
+            app:srcCompat="@drawable/senal"
+            tools:srcCompat="@drawable/senal" />
+    </androidx.gridlayout.widget.GridLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#009CFF"
+        android:text="Construir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

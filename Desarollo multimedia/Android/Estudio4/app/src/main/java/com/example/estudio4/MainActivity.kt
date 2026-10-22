@@ -2,6 +2,7 @@ package com.example.estudio4
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         binding.image3.setOnClickListener {
             binding.imagenPerfil.setImageResource(R.drawable.usuario3)
             var imagen = R.drawable.usuario3
+            Toast.makeText(this, "adadasda", Toast.LENGTH_SHORT).show()
         }
 
         binding.boton.setOnClickListener {
@@ -50,5 +52,13 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+
     }
 }

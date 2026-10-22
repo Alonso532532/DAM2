@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Estudio4</string>
+
+    <string name="nombre">Nombre</string>
+    <string name="edad">Edad</string>
+    <string name="nombre2">Nombre:</string>
+    <string name="edad2">Edad:</string>
+    <string name="texto">Texto</string>
+    <string name="texto2">Texto:</string>
+    <string name="siguiente">Siguiente</string>
+</resources>

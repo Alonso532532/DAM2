@@ -2,11 +2,13 @@ package com.example.estudio4
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.estudio4.databinding.ActivityMainBinding
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
@@ -50,5 +52,21 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        Log.i("Estado", "Pausando app, vaciando campos")
+
+        var imagen = R.drawable.usuario1
+        binding.imagenPerfil.setImageResource(R.drawable.usuario1)
+
+        binding.editTextEdad.setText("")
+        binding.editTextNombre.setText("")
+        binding.editTextTextMultiLine.setText("")
     }
 }
+

@@ -26,7 +26,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/carta1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_margin="10dp"
             app:cardBackgroundColor="#6E373737"
             app:cardCornerRadius="15dp"
@@ -45,12 +45,12 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/carta2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_margin="10dp"
             app:cardBackgroundColor="#6E373737"
             app:cardCornerRadius="15dp"
             app:contentPadding="20dp"
-            app:layout_columnWeight="@integer/material_motion_duration_long_2">
+            app:layout_columnWeight="1">
 
             <TextView
                 android:id="@+id/textoCarta2"
@@ -62,7 +62,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/carta3"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_margin="10dp"
             app:cardBackgroundColor="#6E373737"
             app:cardCornerRadius="15dp"
@@ -80,7 +80,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/carta4"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_margin="10dp"
             app:cardBackgroundColor="#6E373737"
             app:cardCornerRadius="15dp"
@@ -97,7 +97,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/carta5"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_margin="10dp"
             app:cardBackgroundColor="#6E373737"
             app:cardCornerRadius="15dp"
@@ -155,4 +155,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imagen1"
         tools:srcCompat="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

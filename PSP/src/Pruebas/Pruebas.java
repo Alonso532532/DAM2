@@ -6,8 +6,13 @@ public class Pruebas {
     static void main() {
         Cont count = new Cont();
         for (int i = 0; i < 10; i++) {
-            Thread h1 = new Thread(new Hilo(count));
-            h1.run();
+            Thread h;
+            if (i<5) {
+                h = new Thread(new Hilo(count, 1));
+            } else {
+                h = new Thread(new Hilo(count, -1));
+            }
+            h.run();
         }
     }
 }
@@ -15,15 +20,24 @@ public class Pruebas {
 class Hilo implements Runnable {
 
     Cont contador;
+    Integer suma;
 
-    public Hilo(Cont contador) {
+    public Hilo(Cont contador, Integer suma) {
         this.contador = contador;
+        this.suma = suma;
     }
 
     @Override
     public void run() {
         try {
-            contador.sumar();
+            for (int i = 0; i < 2; i++) {
+                Thread.sleep(1000);
+                if (suma>0){
+                    contador.sumar();
+                } else {
+                    contador.restar();
+                }
+            }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -31,13 +45,18 @@ class Hilo implements Runnable {
 }
 
 class Cont {
-    Integer cont = 0;
+    Integer cont = 10;
 
     public synchronized void sumar() throws InterruptedException {
-        Thread.sleep(1000);
+        System.out.println(" ++++++++++ SUMANDO ++++++++++ ");
         System.out.println(++cont);
+        System.out.println(" ++++++++++ SUMA TERMINADA ++++++++++ ");
     }
 
-
+    public synchronized void restar() throws InterruptedException {
+        System.out.println(" ---------- RESTANDO ---------- ");
+        System.out.println(--cont);
+        System.out.println(" ---------- RESTA TERMINADA ---------- ");
+    }
 }
 

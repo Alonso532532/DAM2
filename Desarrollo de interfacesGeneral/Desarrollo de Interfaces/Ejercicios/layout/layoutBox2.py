@@ -29,7 +29,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(widget)
 
     def dtectar(self, estado):
-        print(f"El estado de la {self.sender().text()} está en {["Activado", "", "Desactivado"][estado]}")
+        print(f"El estado de la {self.sender().text()} es {["Desactivado", "", "Activado"][estado]}")
         
 
 app = QApplication([]) # Hago un objeto QApplication

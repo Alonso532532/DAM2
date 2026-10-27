@@ -2,7 +2,7 @@ from PyQt6.QtWidgets import QMainWindow, QHBoxLayout, QWidget, QApplication, QVB
 from PyQt6.QtGui import QAction, QIcon
 from PyQt6.QtCore import Qt, QSize
 
-from Ejercicios.dialogos.dialogs import CustomDialog
+from dialogs import CustomDialog
 
 class MainWindow(QMainWindow):
 
@@ -19,6 +19,7 @@ class MainWindow(QMainWindow):
         
     def pulsado(self, s):
         # Aquí al especificarle shelf le estoy diciendo quien es su padre para que salga con un tamaño razonable
+        # Uso el dialogo creado en "dialogs.py"
         dlg = CustomDialog(self)
         if dlg.exec():
             print("El usuario ha aceptado")

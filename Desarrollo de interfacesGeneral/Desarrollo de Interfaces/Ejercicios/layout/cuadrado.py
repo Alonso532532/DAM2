@@ -8,9 +8,10 @@ class Cuadrado(QWidget):
 
         self.setAutoFillBackground(True)
 
+        # Hago una paleta roja
         paleta = self.palette()
-
         paleta.setColor(QPalette.ColorRole.Window, QColor(color))
 
+        # Y la aplico
         self.setPalette(paleta)
 

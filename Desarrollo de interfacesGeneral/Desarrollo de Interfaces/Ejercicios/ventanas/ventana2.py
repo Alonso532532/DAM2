@@ -1,7 +1,6 @@
 from PyQt6.QtWidgets import QMainWindow, QHBoxLayout, QWidget, QApplication, QVBoxLayout, QPushButton, QStackedLayout, QTabWidget, QLabel, QLineEdit, QCheckBox, QToolBar, QStatusBar, QDialog, QMessageBox
 from PyQt6.QtGui import QAction, QIcon
 from PyQt6.QtCore import Qt, QSize
-from cuadrado import Cuadrado  
 
 class OtraVentana(QWidget):
     def __init__(self):

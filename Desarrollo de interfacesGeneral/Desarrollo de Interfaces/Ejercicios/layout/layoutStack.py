@@ -15,7 +15,7 @@ class MainWindow(QMainWindow):
         stack.addWidget(Cuadrado("black"))
         stack.addWidget(Cuadrado("green"))
 
-        #se puestra el elemento que tenga ese index
+        #se muestra el elemento que tenga ese index
         stack.setCurrentIndex(2)
         
         # Para aplicar un layout es necesario un widget

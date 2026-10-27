@@ -5,12 +5,17 @@ Añadir extensiones
 ● Qt for Python
 
 Crear entorno virtual (desde la Terminal)
-python -m venv App (se añadirá contenido a nuestra carpeta)
-cd App
-cd Scripts
-.\activate
-pip install PyQt6
+(se añadirá contenido a nuestra carpeta)
+
+    python -m venv App 
+
+Si da fallo: "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser"
+
+    cd .\App\Scripts\
+    .\activate
+    pip install PyQt6
 
 Instalar Qt Designer
-pip install PySide6 (instalar Qt Designer)
-pyside6-designer (ejecutar Qt Designer)
+
+    pip install PySide6 (instalar Qt Designer)
+    pyside6-designer (ejecutar Qt Designer)

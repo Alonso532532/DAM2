@@ -7,7 +7,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Mi aplicación")
 
-        self.etiqueta = QLabel("Pulsa aquí")
+        self.etiqueta = QLabel("Click derecho aquí")
         self.setCentralWidget(self.etiqueta)
 
     # En todos los widgets se aplican estas funciónes

@@ -172,29 +172,47 @@ public class DemoSpring1Application implements CommandLineRunner {
 //		List<Persona> resultadoDeConsulta5 = personaRepositorio.findByDniContainingOrEmailNull('9');
 //		resultadoDeConsulta5.forEach(System.out::println);
 
-		// ========== Pruebas con clases relacionadas
-		System.out.println("================ One to One ====================");
+		// <=======================================================================================>
+		// <============================== Pruebas con clases relacionadas ==============================>
+		// <=======================================================================================>
+//		System.out.println("================ One to One Bidireccional ====================");
 //		Persona p = new Persona();
 //
-//		p.setNombre("Crlos");
-//		p.setApellidos("Casado");
-//		p.setDni("1111111G");
-//		p.setEmail("dasdasffff@daasdassfa.com");
-//		// Es necesario un repositoio para el coche también
-//		p.setCoche(new Coche(null, "Toyota", "Corola", "23425-PSP"));
+//		p.setNombre("Hecproll");
+//		p.setApellidos("Criado");
+//		p.setDni("11133311G");
+//		p.setEmail("dasdaaaafaaf@sfa.com");
+
+		// ========== Es necesario un repositoio para el coche también
+
+//		Coche coche = new Coche();
+//		coche.setMarca("Seat");
+//		coche.setMatricula("65634-PSP");
+//		coche.setModelo("Lozano");
+//
+//		coche.setPersona(p);
+//		p.setCoche(coche);
+
+		// ============ Al guardar una persona con un coche se guarda también el coche
+		// ============ Hay que tener cuidado con los to string en objetos relacionados bidireccionalmente porque se puede generar un bucle infinito de llamadas
+		// personaRepositorio.save(p);
+
 //
 //		personaRepositorio.save(p);
-		Optional<Persona> personaConCoche = personaRepositorio.findById(11L);
-		if (personaConCoche.isPresent()){
-			Persona p = personaConCoche.get();
-			System.out.println(p);
-		}
-
-		Optional<Coche> coche = cocheRepositorio.findById(1L);
-		if (coche.isPresent()){
-			Coche p = coche.get();
-			System.out.println(p);
-		}
+		// <=======================================================================================>
+		// <============================== Muestro objetos mediante los ids ==============================>
+		// <=======================================================================================>
+//		Optional<Persona> personaConCoche = personaRepositorio.findById(11L);
+//		if (personaConCoche.isPresent()){
+//			Persona p = personaConCoche.get();
+//			System.out.println(p);
+//		}
+//
+//		Optional<Coche> coche = cocheRepositorio.findById(2L);
+//		if (coche.isPresent()){
+//			Coche p = coche.get();
+//			System.out.println(p);
+//		}
 
 	}
 }

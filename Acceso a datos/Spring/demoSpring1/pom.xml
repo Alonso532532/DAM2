@@ -53,6 +53,20 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!-- Para el @JsonBackReference "Spring Web"
+		Con esta dependencia se ejecuta un servidor al ejecutar el programa, pero evito que se arranque en el "application.properties" con:
+		spring.main.web-application-type=none
+		-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-webmvc</artifactId>-->
+<!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-webmvc-test</artifactId>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
 	</dependencies>
 
 	<build>

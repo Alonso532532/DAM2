@@ -9,6 +9,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 app = QApplication([]) # Hago un objeto QApplication
 app.setStyle("Fusion") # Cambia el estilo de la interfaz en clase hemos visto "Fusion" y "Windows"
+with open("estilos/estilo1.qss","r") as f:
+    app.setStyleSheet(f.read())
 
 window = MainWindow() # Hago un objeto QMainWindow que es una ventana
 

@@ -22,7 +22,7 @@ class MainWindow(QMainWindow):
         # Boton Se añadirá luego en el menú ===========================================================================================>
 
         # Le añado un icono pero se carga el texto de "Botón"
-        boton = QAction(QIcon("Ejercicios/fugue-icons-3.5.6/icons/disk.png"),"Guardar", self)
+        boton = QAction(QIcon("menusConToolBar/fugue-icons-3.5.6/icons/disk.png"),"Guardar", self)
 
         # Para añadirle un texto que salga al hacer hover, pero se tiene que añadir más abajo "self.setStatusBar(QStatusBar(self))"
         boton.setStatusTip("Guardar doucmento")
@@ -33,7 +33,7 @@ class MainWindow(QMainWindow):
         # Boton2 Se añadirá luego en el menú ===========================================================================================>
 
         # Le añado un icono pero se carga el texto de "Botón"
-        boton2 = QAction(QIcon("Ejercicios/fugue-icons-3.5.6/icons/document.png"),"Nuevo", self)
+        boton2 = QAction(QIcon("menusConToolBar/fugue-icons-3.5.6/icons/document.png"),"Nuevo", self)
 
         # Para añadirle un texto que salga al hacer hover, pero se tiene que añadir más abajo "self.setStatusBar(QStatusBar(self))"
         boton2.setStatusTip("Nuevo doucmento")
@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
         # Boton3 Se añadirá luego en el menú ===========================================================================================>
 
         # Le añado un icono pero se carga el texto de "Botón"
-        boton3 = QAction(QIcon("Ejercicios/fugue-icons-3.5.6/icons/application-dock.png"),"Abrir", self)
+        boton3 = QAction(QIcon("menusConToolBar/fugue-icons-3.5.6/icons/application-dock.png"),"Abrir", self)
 
         # Para añadirle un texto que salga al hacer hover, pero se tiene que añadir más abajo "self.setStatusBar(QStatusBar(self))"
         boton3.setStatusTip("Abrir doucmento")

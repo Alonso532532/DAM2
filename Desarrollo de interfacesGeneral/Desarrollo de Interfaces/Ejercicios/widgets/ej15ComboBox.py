@@ -13,7 +13,7 @@ class MainWindow(QMainWindow):
         lista.setEditable(True)
 
         lista.currentIndexChanged.connect(self.mandarIndice)
-
+        #lambda: print(lista.currentText()) para sacar el texto
         lista.currentTextChanged.connect(self.mandarOp)
 
 

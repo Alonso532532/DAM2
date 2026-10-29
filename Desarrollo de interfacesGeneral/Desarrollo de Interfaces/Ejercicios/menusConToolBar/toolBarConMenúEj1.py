@@ -21,7 +21,7 @@ class MainWindow(QMainWindow):
         # Boton Se añadirá luego en el menú ===========================================================================================>
 
         # Le añado un icono pero se carga el texto de "Botón"
-        boton = QAction(QIcon("Ejercicios/fugue-icons-3.5.6/icons/bug.png"),"Cambiar texto", self)
+        boton = QAction(QIcon("menusConToolBar/fugue-icons-3.5.6/icons/bug.png"),"Cambiar texto", self)
 
         # Para añadirle un texto que salga al hacer hover, pero se tiene que añadir más abajo "self.setStatusBar(QStatusBar(self))"
         boton.setStatusTip("Botón para cambiar el texto")

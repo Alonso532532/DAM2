@@ -20,7 +20,7 @@ class MainWindow(QMainWindow):
 
         # Botón para barras
         # Le añado un icono pero se carga el texto de "Botón"
-        boton = QAction(QIcon("Ejercicios/fugue-icons-3.5.6/icons/smiley-money.png"),"Botón", self)
+        boton = QAction(QIcon("menusConToolBar/fugue-icons-3.5.6/icons/smiley-money.png"),"Botón", self)
 
         # Para añadirle un texto que salga al hacer hover, pero se tiene que añadir más abajo "self.setStatusBar(QStatusBar(self))"
         boton.setStatusTip("Este es mi botón")
@@ -32,7 +32,7 @@ class MainWindow(QMainWindow):
         
         # Boton 2 Se añadirá luego en el menú ===========================================================================================>
 
-        boton2 = QAction(QIcon("Ejercicios/fugue-icons-3.5.6/icons/smiley-sad.png"),"Botón2", self)
+        boton2 = QAction(QIcon("menusConToolBar/fugue-icons-3.5.6/icons/acorn.png"),"Botón2", self)
 
         # Para añadirle un texto que salga al hacer hover, pero se tiene que añadir más abajo "self.setStatusBar(QStatusBar(self))"
         boton2.setStatusTip("Este es mi otro botón")

@@ -14,7 +14,7 @@ class MainWindow(QMainWindow):
         formato = casilla.font()
         formato.setBold(True)
         casilla.setFont(formato)
-
+        # is checked para comprobar su estado
         casilla.stateChanged.connect(self.imprimirEstado)
 
         self.setCentralWidget(casilla)

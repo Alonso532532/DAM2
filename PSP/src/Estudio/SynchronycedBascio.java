@@ -1,9 +1,8 @@
-package Estudio.e1;
+package Estudio;
 
-import java.util.List;
 import java.util.Random;
 
-public class e1 {
+public class SynchronycedBascio {
     static void main() {
         Progreso progreso = new Progreso();
         Thread hiloProceso = new Thread(progreso);
@@ -39,12 +38,14 @@ class Progreso implements Runnable {
     public Progreso() {
     }
 
-    public synchronized boolean reducir(String s) {
+    public synchronized boolean reducir(String s) throws InterruptedException {
         if (progreso >= 0 && progreso <= meta && empezada) {
+            wait();
             int resta = new Random().nextInt(0, 21);
             progreso -= resta;
             System.out.println("---- HILO:" + s + " RESTA:" + resta + " ----" + (resta > 14 ? "!!!" : ""));
             return true;
+
         }
         return ronda <= rondaMax;
     }
@@ -54,6 +55,7 @@ class Progreso implements Runnable {
             int suma = new Random().nextInt(0, 21);
             progreso += suma;
             System.out.println("++++ HILO:" + s + " SUMA:" + suma + " ++++" + (suma > 14 ? "!!!" : ""));
+            notifyAll();
             return true;
         }
         return ronda <= rondaMax;

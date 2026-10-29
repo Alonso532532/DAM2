@@ -12,7 +12,7 @@ public class Pruebas {
             } else {
                 h = new Thread(new Hilo(count, -1));
             }
-            h.run();
+            h.start();
         }
     }
 }
@@ -31,7 +31,6 @@ class Hilo implements Runnable {
     public void run() {
         try {
             for (int i = 0; i < 2; i++) {
-                Thread.sleep(1000);
                 if (suma>0){
                     contador.sumar();
                 } else {
@@ -48,15 +47,21 @@ class Cont {
     Integer cont = 10;
 
     public synchronized void sumar() throws InterruptedException {
+        Thread.sleep(1000);
+        notifyAll();
         System.out.println(" ++++++++++ SUMANDO ++++++++++ ");
         System.out.println(++cont);
         System.out.println(" ++++++++++ SUMA TERMINADA ++++++++++ ");
+        wait();
     }
 
     public synchronized void restar() throws InterruptedException {
+        Thread.sleep(1000);
+        notifyAll();
         System.out.println(" ---------- RESTANDO ---------- ");
         System.out.println(--cont);
         System.out.println(" ---------- RESTA TERMINADA ---------- ");
+        wait();
     }
 }
 

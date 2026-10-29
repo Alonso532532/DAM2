@@ -29,8 +29,17 @@ public class Persona {
     LocalDateTime fechaDeCreacion;
 
     // Relaciono la clase Persona con Coche con una cascada de ALL, que hace que se elimine el hijo si el padre se elimina
-    // Al estar solo en persona y no en cohce es una relación unidireccional
+    // Al estar solo en persona y no en cohce es una relación unidireccional pero no es este caso, la de aquí es bidireccional
+    // El @JsonBackReference es para hacerlo "padre" en la relación (solo funciona con servicios en red),
+    // pero me sirve asique directamente evito el fallo del to string con @ToString.Exclude
     @OneToOne(cascade = CascadeType.ALL)
+    // Para evitar el uso de 2 claves para relacionar 2 elementos se usa "@JoinColumn"
+    // En el hijo hay que poner "@OneToOne(mappedBy = "<<campo>>")" en este caso <<campo>> es coche
+    // El "referencedColumnName" es el nombre del campo id del hijo
+    // El "name" es el nombre del campo
+    @JoinColumn(name = "coche_id", referencedColumnName = "id")
+    //@JsonBackReference
+    //@ToString.Exclude
     Coche coche;
 
     // "@PrePersist" hace que al ejecutar el .save (guardar el objeto en la bbdd) se ejecute el método
@@ -47,4 +56,18 @@ public class Persona {
 
     //@Basic
     //@Column Permite configurar cosillas de las columnas
+
+    // =================== To string para evitar fallos en la relación bidireccional
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", dni='" + dni + '\'' +
+                ", email='" + email + '\'' +
+                ", fechaDeCreacion=" + fechaDeCreacion +
+                ", coche=" + coche.getId() + " - " + coche.getMatricula() +
+                '}';
+    }
 }

@@ -18,6 +18,7 @@ paleta = QPalette()
 paleta.setColor(QPalette.ColorRole.Window, Qt.GlobalColor.red)
 paleta.setColor(QPalette.ColorRole.WindowText, QColor(0,255,0))
 paleta.setColor(QPalette.ColorRole.Button, QColor("#030303"))
+paleta.setColor(QPalette.ColorRole.Highlight, Qt.GlobalColor.yellow)
 app.setPalette(paleta)
 
 window = MainWindow() # Hago un objeto QMainWindow que es una ventana

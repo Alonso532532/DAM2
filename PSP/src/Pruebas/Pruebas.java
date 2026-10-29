@@ -45,7 +45,10 @@ class Hilo implements Runnable {
 
 class Cont {
     Integer cont = 10;
+    Object lock1 = new Object();
+    Object lock2 = new Object();
 
+<<<<<<< HEAD
     public synchronized void sumar() throws InterruptedException {
         Thread.sleep(1000);
         notifyAll();
@@ -62,6 +65,25 @@ class Cont {
         System.out.println(--cont);
         System.out.println(" ---------- RESTA TERMINADA ---------- ");
         wait();
+=======
+
+    public void sumar() throws InterruptedException {
+        synchronized (lock1) {
+            Thread.sleep(1000);
+            System.out.println(" ++++++++++ SUMANDO ++++++++++ ");
+            System.out.println(++cont);
+            System.out.println(" ++++++++++ SUMA TERMINADA ++++++++++ ");
+        }
+    }
+
+    public void restar() throws InterruptedException {
+        synchronized (lock2) {
+            Thread.sleep(1000);
+            System.out.println(" ---------- RESTANDO ---------- ");
+            System.out.println(--cont);
+            System.out.println(" ---------- RESTA TERMINADA ---------- ");
+        }
+>>>>>>> de8fe19099ea08c769142cb436b5687edb8c456f
     }
 }
 

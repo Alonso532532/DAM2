@@ -13,6 +13,7 @@ class MenuScreen extends StatelessWidget {
       MenuOption(ruta: "listview2", icono: Icons.list_alt_outlined, nombre: "Lista 2"),
       MenuOption(ruta: "card", icono: Icons.card_giftcard, nombre: "Cartas"),
       MenuOption(ruta: "alert", icono: Icons.lock_clock_outlined, nombre: "Alertas"),
+      MenuOption(ruta: "buttons", icono: Icons.lock_clock_outlined, nombre: "Botones"),
     ];
 
     return Scaffold(

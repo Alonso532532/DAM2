@@ -1,6 +1,32 @@
 import 'package:flutter/material.dart';
 
+const listaColores = <Color>[
+  Colors.black,
+  Colors.white,
+  Colors.grey,
+  Colors.red,
+  Colors.green,
+  Colors.blue
+];
+
 class AppTheme {
+  final int colorSeleccionado;
+  
+  // Assert sirve para lanzar errores personalizados
+  new({
+    this.colorSeleccionado = 0
+  }): assert( colorSeleccionado >= 0, 'El color seleccionado debe ser mayor que 0'),
+      assert( colorSeleccionado < listaColores.length, 'El color seleccionado debe igual o menor que ${listaColores.length}');
+  
+  ThemeData getTheme() => ThemeData(
+    useMaterial3: true,
+    colorSchemeSeed: listaColores[colorSeleccionado], 
+
+    appBarTheme: const AppBarTheme(
+      centerTitle: true,
+    )
+  );
+
   //Color primario
 
   static const Color primary =  Color.fromARGB(255, 175, 112, 76);
@@ -27,4 +53,5 @@ class AppTheme {
         iconTheme: IconThemeData(color: const Color.fromARGB(255, 255, 139, 7)),
         scaffoldBackgroundColor: const Color.fromARGB(255, 0, 0, 0),
   );
+
 }

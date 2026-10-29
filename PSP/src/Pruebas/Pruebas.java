@@ -1,6 +1,7 @@
 package Pruebas;
 
 import java.lang.Runnable;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Pruebas {
     static void main() {
@@ -47,9 +48,26 @@ class Cont {
     Integer cont = 10;
     Object lock1 = new Object();
     Object lock2 = new Object();
+    AtomicInteger c = new AtomicInteger(10);
 
-<<<<<<< HEAD
-    public synchronized void sumar() throws InterruptedException {
+    public void sumar() throws InterruptedException {
+        Thread.sleep(1000);
+        System.out.println(" ++++++++++ SUMANDO ++++++++++ ");
+        System.out.println(c.incrementAndGet());
+        System.out.println(" ++++++++++ SUMA TERMINADA ++++++++++ ");
+    }
+
+    public void restar() throws InterruptedException {
+        Thread.sleep(1000);
+        System.out.println(" ---------- RESTANDO ---------- ");
+        System.out.println(c.decrementAndGet());
+        System.out.println(" ---------- RESTA TERMINADA ---------- ");
+    }
+
+
+    /*
+
+        public synchronized void sumar() throws InterruptedException {
         Thread.sleep(1000);
         notifyAll();
         System.out.println(" ++++++++++ SUMANDO ++++++++++ ");
@@ -65,7 +83,7 @@ class Cont {
         System.out.println(--cont);
         System.out.println(" ---------- RESTA TERMINADA ---------- ");
         wait();
-=======
+    }
 
     public void sumar() throws InterruptedException {
         synchronized (lock1) {
@@ -83,7 +101,7 @@ class Cont {
             System.out.println(--cont);
             System.out.println(" ---------- RESTA TERMINADA ---------- ");
         }
->>>>>>> de8fe19099ea08c769142cb436b5687edb8c456f
     }
+    */
 }
 

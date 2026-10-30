@@ -27,7 +27,7 @@ class MainWindow(QMainWindow):
         boton.triggered.connect(self.botonpulsado)
 
         barra.addAction(boton)
-
+        # Para anadir una separación
         barra.addSeparator()
         
         # Boton 2 Se añadirá luego en el menú ===========================================================================================>

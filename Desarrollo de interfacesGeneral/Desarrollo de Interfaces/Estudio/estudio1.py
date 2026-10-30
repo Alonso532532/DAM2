@@ -144,6 +144,53 @@ class MainWindow(QMainWindow):
 
         layoutPadre.addLayout(layoutBotones)
 
+        # ====================== Barra ====================== 
+        barra = QToolBar("Barra de herramientas")
+        
+        boton = QAction(QIcon("fugue-icons-3.5.6/icons/address-book.png"),"Sobre el pago", self)
+        boton.setStatusTip("Información sobre el método de pago")
+        boton.triggered.connect(self.informacionDelPago)
+
+
+        barra.addWidget(QLabel("Más información: "))
+        barra.addSeparator()
+        barra.addAction(boton)
+
+        self.addToolBar(barra)
+        self.setStatusBar(QStatusBar(self))
+
+        # ====================== Acciones ====================== 
+
+        accionPagar = QAction("Pagar ya", self)
+        accionPagar.triggered.connect(self.pagar)
+
+        accionReiniciar = QAction("Reiniciar", self)
+        accionReiniciar.triggered.connect(self.reiniciar)
+
+        accionActualizar = QAction(QIcon("fugue-icons-3.5.6/icons/application-list.png"),"Actualizar", self)
+        accionActualizar.triggered.connect(self.actualizarTexto)
+        # ====================== Menú ====================== 
+
+        menu = self.menuBar()
+        # El "&" hace que al presionar "Alt" se seleccióne
+        menuPagar = menu.addMenu("&Pagar")
+        menuOpciones = menu.addMenu("&Opciónes")
+        menuInfo = menu.addMenu("&Info")
+        # Le añado una de las funciónes creadas anteriormente
+        menuPagar.addAction(accionPagar)
+
+        menuOpciones.addAction(accionReiniciar)
+        menuOpciones.addSeparator()
+        menuOpciones.addAction(accionActualizar)
+
+        menuInfo.addAction(boton) 
+        
+        # Añado un submenú con más opciónes
+        #menuArchivo.addMenu("Más")
+
+        menuMas=menuInfo.addMenu("Más")
+        menuMas.addAction(boton)
+
 
         # ====================== Asignación del layout padre ====================== 
 
@@ -156,6 +203,18 @@ class MainWindow(QMainWindow):
 
         self.ventanaPago = VentanaPago()
         
+
+
+    def informacionDelPago(self):
+        dlg = QMessageBox(self)
+        dlg.setWindowTitle("Info")
+        dlg.setText("Nuestra app incluye sistemas de pago seguro")
+        # Si le asigno nuevos botónes los anteriores se pierden
+        dlg.setStandardButtons(QMessageBox.StandardButton.Ok)
+        # Le asigno un icono
+        dlg.setIcon(QMessageBox.Icon.Information)
+
+        dlg.exec()
 
     def actualizarTexto(self):
         self.texto.clear()
@@ -270,6 +329,7 @@ class VentanaPago(QWidget):
         layoutBotonesPagar.addWidget(botonAceptar)
 
         self.setLayout(plantilla)
+    
 
     def aceptar(self):
         dlg = QMessageBox(self)
@@ -279,7 +339,7 @@ class VentanaPago(QWidget):
         dlg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
 
         # Le asigno un icono
-        dlg.setIcon(QMessageBox.Icon.Information)
+        dlg.setIcon(QMessageBox.Icon.Question)
 
         # Aquí no es igual que en el QDialogButtonBox, hay que compararlo con el propio botón
         if dlg.exec() == QMessageBox.StandardButton.Yes:

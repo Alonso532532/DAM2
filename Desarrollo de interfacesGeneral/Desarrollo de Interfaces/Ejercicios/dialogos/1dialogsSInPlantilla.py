@@ -21,6 +21,15 @@ class MainWindow(QMainWindow):
         # Aquí al especificarle shelf le estoy diciendo quien es su padre para que salga con un tamaño razonable
         dlg = QDialog(self)
         dlg.setWindowTitle("Cuadro de dialogo")
+
+        layout = QHBoxLayout()
+
+        label = QLabel("Hola")
+
+        layout.addWidget(label)
+
+        dlg.setLayout(layout)
+
         dlg.exec()
 
 # Ejecución de la app

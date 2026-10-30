@@ -73,6 +73,8 @@ public class Main {
             throw new RuntimeException(e);
         }
 
+
+
         // Tamaño
         //System.out.println("Tamaño: "+archivos.size());
 
@@ -118,5 +120,7 @@ public class Main {
 //        });
 //        System.out.println(acum);
 //        System.out.println(archivos.size());
+
+//        System.out.println(mapaRegistrosPorMes.registros.keySet());
     }
 }

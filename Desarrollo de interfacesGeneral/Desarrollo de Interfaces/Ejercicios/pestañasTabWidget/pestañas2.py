@@ -9,7 +9,7 @@ class MainWindow(QMainWindow):
         tabs = QTabWidget()
 
         # Le digo donde tienen que estar las pestañas 
-        tabs. setTabPosition(QTabWidget.TabPosition.North)
+        tabs.setTabPosition(QTabWidget.TabPosition.North)
         # Si va a poder mover el orden de las pestañas
         tabs.setMovable(True)
 

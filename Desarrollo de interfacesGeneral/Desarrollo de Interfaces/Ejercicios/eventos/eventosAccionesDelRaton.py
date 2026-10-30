@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QMainWindow, QDateEdit, QComboBox, QHBoxLayout, QTextEdit, QWidget, QApplication, QVBoxLayout, QPushButton, QStackedLayout, QTabWidget, QLabel, QLineEdit, QCheckBox, QToolBar, QStatusBar
+from PyQt6.QtWidgets import QMainWindow, QMenu, QDateEdit, QComboBox, QHBoxLayout, QTextEdit, QWidget, QApplication, QVBoxLayout, QPushButton, QStackedLayout, QTabWidget, QLabel, QLineEdit, QCheckBox, QToolBar, QStatusBar
 from PyQt6.QtGui import QAction, QIcon
 from PyQt6.QtCore import Qt, QSize, QDate 
 
@@ -23,6 +23,12 @@ class MainWindow(QMainWindow):
     def mouseDoubleClickEvent(self, e):
             self.etiqueta.setText("Has hecho doble click")
 
+    def contextMenuEvent(self, event):
+        context = QMenu(self)
+        context.addAction(QAction("Acción 1",self))
+        context.addAction(QAction("Acción 2",self))
+        context.addAction(QAction("Acción 3",self))
+        context.exec(event.globalPos())
 
 # Ejecución de la app
 app = QApplication([]) # Hago un objeto QApplication

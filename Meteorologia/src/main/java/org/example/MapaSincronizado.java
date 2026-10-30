@@ -5,6 +5,7 @@ import java.util.*;
 public class MapaSincronizado {
     // Aquí se agruparan los registros por su més <Mes, Registros>
     Map<String, ArrayList<Registro>> registros = new LinkedHashMap<>();
+    Integer contAnadidos = 0;
 
     public synchronized void anadirRegistro(Registro r){
         if (registros.get(r.getMesYAno())==null){
@@ -12,5 +13,7 @@ public class MapaSincronizado {
         } else {
             registros.get(r.getMesYAno()).add(r);
         }
+        contAnadidos++;
+        //System.out.println(contAnadidos);
     }
 }

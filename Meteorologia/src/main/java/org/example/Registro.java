@@ -13,7 +13,7 @@ public class Registro {
     String mesYAno;
 
     public void calcularFecha(){
-        mesYAno = fecha.substring(5, 7).concat(fecha.substring(0, 4));
+        mesYAno = fecha.substring(0, 5).concat(fecha.substring(5, 7));
     }
 
     public Registro(String fecha, String nombre, String provincia, Float tmin, String horatmin, Float tmax, String horatmax) {

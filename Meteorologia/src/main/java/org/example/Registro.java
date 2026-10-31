@@ -96,15 +96,13 @@ public class Registro {
 
     @Override
     public String toString() {
-        return "Registro{" +
-                "fecha='" + fecha + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", provincia='" + provincia + '\'' +
-                ", tmin=" + tmin +
-                ", horatmin='" + horatmin + '\'' +
-                ", tmax=" + tmax +
-                ", horatmax='" + horatmax + '\'' +
-                ", mesYAno='" + mesYAno + '\'' +
-                '}';
+        return "Fecha - " + fecha +
+                " | Localidad - " + nombre +
+                " | Provincia - " + provincia +
+                " | Temperatura maxima - " + tmax +
+                " | Temperatura minima - " + tmin +
+                " | horatmin - " + horatmin +
+                " | horatmax - " + horatmax +
+                " | mesYAno - " + mesYAno;
     }
 }

@@ -16,4 +16,20 @@ public class MapaSincronizado {
         contAnadidos++;
         //System.out.println(contAnadidos);
     }
+
+    public Map<String, ArrayList<Registro>> getRegistros() {
+        return registros;
+    }
+
+    public void setRegistros(Map<String, ArrayList<Registro>> registros) {
+        this.registros = registros;
+    }
+
+    public Integer getContAnadidos() {
+        return contAnadidos;
+    }
+
+    public void setContAnadidos(Integer contAnadidos) {
+        this.contAnadidos = contAnadidos;
+    }
 }

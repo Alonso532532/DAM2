@@ -14,7 +14,7 @@
             document.getElementById("texto").textContent = ""
             for (let i = 0; i < 9999; i++) {
                 if(letras[i%23]==self.key.toUpperCase()){
-                    var ceros = 3 - i%10
+                    var ceros = 4 - String(i).length
                     for (let j = 0; j < ceros; j++) {
                         document.getElementById("texto").textContent = document.getElementById("texto").textContent+"0"
                     }

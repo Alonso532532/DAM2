@@ -91,8 +91,8 @@ public class Main {
 
         // Lo mismo que arriba
         Integer cantidadDelLoteRegs = 1;
-        Integer cantidadDeLotesRegs = setMes.size()/cantidadDelLoteRegs;
-        Integer hilosRegs = cantidadDeLotesRegs/3;
+        Integer cantidadDeLotesRegs = 12;
+        Integer hilosRegs = 3;
 
         // En este array se guardarán los resultados de los hilos, cada pos equivale al resultado de un hilo
         String[] resultados;
@@ -102,6 +102,8 @@ public class Main {
         } else {
             resultados = new String[cantidadDeLotesRegs];
         }
+
+        System.out.println(setMes);
 
         // Reparto los meses en listas de meses para cada tarea y asigno una posición única del array de respuestas a cada tarea
         List<TareaGenerarString> tareasRes = new ArrayList<>();

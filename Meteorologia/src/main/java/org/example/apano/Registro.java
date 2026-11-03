@@ -10,10 +10,10 @@ public class Registro {
     String horatmax;
 
     // Saco el año y més para poder agrupar por estos
-    String mesYAno;
+    String mes;
 
     public void calcularFecha(){
-        fecha.substring(5, 7);
+         mes = fecha.substring(5, 7);
     }
 
     public Registro(String fecha, String nombre, String provincia, Float tmin, String horatmin, Float tmax, String horatmax) {
@@ -86,12 +86,12 @@ public class Registro {
         this.horatmax = horatmax;
     }
 
-    public String getMesYAno() {
-        return mesYAno;
+    public String getMes() {
+        return mes;
     }
 
-    public void setMesYAno(String mesYAno) {
-        this.mesYAno = mesYAno;
+    public void setMes(String mes) {
+        this.mes = mes;
     }
 
     @Override
@@ -103,6 +103,6 @@ public class Registro {
                 " | Temperatura minima - " + tmin +
                 " | horatmin - " + horatmin +
                 " | horatmax - " + horatmax +
-                " | mesYAno - " + mesYAno;
+                " | mesYAno - " + mes;
     }
 }

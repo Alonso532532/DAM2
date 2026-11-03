@@ -1,15 +1,14 @@
 package org.example.apano;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.sql.Array;
+import java.util.*;
 
 public class TareaGenerarString implements Runnable {
     List<String> listaMeses;
     Map<String, ArrayList<Registro>> registros;
     String[] resultado;
     Integer pos;
+    String[] meses = new String[]{"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Noviembre", "Octubre", "Diciembre"};
 
     public TareaGenerarString(List<String> listaMeses, Map<String, ArrayList<Registro>> registros, String[] resultado, Integer pos) {
         this.listaMeses = listaMeses;
@@ -27,8 +26,9 @@ public class TareaGenerarString implements Runnable {
             Registro regTmax = regs.stream().filter(a->a.getTmax()!=null).max(Comparator.comparing(Registro::getTmax)).get();
             Registro regTmin = regs.stream().filter(a->a.getTmin()!=null).min(Comparator.comparing(Registro::getTmin)).get();
 
+            int numMes = mes.charAt(0) == '0' ? Integer.parseInt(String.valueOf(mes.charAt(1))) : Integer.parseInt(mes);
             cadResultado.append(
-                    "\n<=============== "+mes+" ===============>\n"+
+                    "\n<=============== "+meses[numMes-1]+" ===============>\n"+
                     "> Registro con temperatura máxima: "+regTmax+
                     "\n> Registro con temperatura mínima: "+regTmin+
                     "\n<============================================>");

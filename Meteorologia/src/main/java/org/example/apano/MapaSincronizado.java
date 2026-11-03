@@ -11,10 +11,10 @@ public class MapaSincronizado {
     Integer contAnadidos = 0;
 
     public synchronized void anadirRegistro(Registro r){
-        if (registros.get(r.getMesYAno())==null){
-            registros.put(r.getMesYAno(), new ArrayList<>(List.of(r)));
+        if (registros.get(r.getMes())==null){
+            registros.put(r.getMes(), new ArrayList<>(List.of(r)));
         } else {
-            registros.get(r.getMesYAno()).add(r);
+            registros.get(r.getMes()).add(r);
         }
         contAnadidos++;
         //System.out.println(contAnadidos);

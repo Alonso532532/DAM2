@@ -2,9 +2,13 @@ package org.iesch.ad.demoSpring1;
 
 import lombok.RequiredArgsConstructor;
 import org.iesch.ad.demoSpring1.Modelo.Coche;
+import org.iesch.ad.demoSpring1.Modelo.Curso;
 import org.iesch.ad.demoSpring1.Modelo.Persona;
+import org.iesch.ad.demoSpring1.Modelo.Student;
+import org.iesch.ad.demoSpring1.repositorio.ClaseRepositorio;
 import org.iesch.ad.demoSpring1.repositorio.CocheRepositorio;
 import org.iesch.ad.demoSpring1.repositorio.PersonaRepositorio;
+import org.iesch.ad.demoSpring1.repositorio.StudentRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -13,10 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @SpringBootApplication
 //Si quiero que la clase use un .properties en el código con UTF-8
@@ -45,6 +46,12 @@ public class DemoSpring1Application implements CommandLineRunner {
 
 	@Autowired
 	CocheRepositorio cocheRepositorio;
+
+	@Autowired
+	StudentRepositorio studentRepositorio;
+
+	@Autowired
+	ClaseRepositorio claseRepositorio;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoSpring1Application.class, args);
@@ -214,5 +221,35 @@ public class DemoSpring1Application implements CommandLineRunner {
 //			System.out.println(p);
 //		}
 
+		// <=======================================================================================>
+		// <============================== Many to many ==============================>
+		// <=======================================================================================>
+
+		// <================================ Unidireccional =====================================>
+		/*
+		Student e = new Student();
+		e.setNombre("IlozanorBismilahPascual67BomboSkibidyLuisWallahiPapeada");
+
+		Curso c1 = new Curso();
+		c1.setNombre("PHP");
+		Curso c2 = new Curso();
+		c2.setNombre("Githu");
+		Curso c3 = new Curso();
+		c3.setNombre("Html");
+
+		e.setCursos(Set.of(c1, c2, c3));
+
+		studentRepositorio.save(e);
+		*/
+		// <================================ Bidireccional =====================================>
+		Curso c = new Curso();
+		c.setNombre("PSP");
+
+		Student s1 = Student.builder().nombre("Remon").build();
+		Student s2 = Student.builder().nombre("Pasc").build();
+
+		c.setEstudiantes(Set.of(s1, s2));
+
+		claseRepositorio.save(c);
 	}
 }

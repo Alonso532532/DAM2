@@ -48,7 +48,7 @@ class ColaSemaforo {
 
     public void consumir(String nombre) throws InterruptedException {
         semaforoConsumir.acquire();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         while (true) {
             if (cola.isEmpty()) {
                 System.out.println("<==============> " + nombre + " BLOQUEADO <============================================>"+grafico());
@@ -117,7 +117,7 @@ class HiloConsumidorSemaforo implements Runnable {
             try {
                 // El semaforo no es justo entonces el primero que lo coge se estaría ejecutando hasta que termine si no tiene un delay entre consumición
                 // Pero al añadirle delay deja que otro consumidor entre mientras no lo esté usando
-                Thread.sleep(1000);
+                Thread.sleep(100);
                 cola.consumir(nombre);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);

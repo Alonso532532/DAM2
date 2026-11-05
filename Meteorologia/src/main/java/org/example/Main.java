@@ -52,6 +52,7 @@ public class Main {
 
             //System.out.println(i*cantidadDelLote+"-"+(i+1)*cantidadDelLote);
         }
+
         // Los que sobren los añado por separado
         Integer sobrantes = archivos.size()%cantidadDelLote;
         if (sobrantes!=0){

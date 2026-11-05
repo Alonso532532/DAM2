@@ -28,9 +28,11 @@ public class TareaOrganizarRegistros implements Runnable {
         for (Path archivo: archivos) {
             try {
                 // Consigo transformar las , de separación por ' de forma temporal para poder cambiar las , de los float por . y así evitar el fallo del formato de los float
-                Matcher matcher = Pattern.compile("\",\"").matcher(Files.readString(archivo));
-                String cad = matcher.replaceAll("\"'\"");
-                cad = cad.replace(",", ".").replace("'", ",");
+//                Matcher matcher = Pattern.compile("\",\"").matcher(Files.readString(archivo));
+//                String cad = matcher.replaceAll("\"'\"");
+//                cad = cad.replace(",", ".").replace("'", ",");
+                String cad = Files.readString(archivo).replaceAll("(\\d),(\\d)", "$1.$2");
+
                 // Una vez formateada la cadena json la paso a un objeto Registro
                 Gson gson = new Gson();
                 Registro reg = gson.fromJson(cad, Registro.class);

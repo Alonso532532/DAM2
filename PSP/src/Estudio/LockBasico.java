@@ -1,76 +1,51 @@
 package Estudio;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class LockBasico {
-
-    static void main() {
-        Partida partida = new Partida();
-        for (int i = 0; i < 2; i++) {
-            new Thread(new DadoEquipo1(partida)).start();
+    static void main() throws InterruptedException {
+        Contador contador = new Contador();
+        for (int i = 0; i < 10; i++) {
+            new Thread(new HiloCont("Hilo "+i,contador)).start();
         }
-    }
 
+    }
 }
 
-class DadoEquipo1 implements Runnable {
-    ReentrantLock lock;
-    Boolean terminar = false;
-    Partida partida;
+class Contador {
+    Integer contador = 0;
 
-    public DadoEquipo1(Partida partida) {
-        this.partida = partida;
+    ReentrantLock lock = new ReentrantLock();
+
+    public void sumar(String nom) throws InterruptedException {
+        lock.lock();
+        System.out.println("["+nom+"] - Sumando 1...");
+        Thread.sleep(1000);
+        System.out.println("["+nom+"] - Ha sumado 1 - "+(++contador));
+        lock.unlock();
     }
+}
 
-    public void setLock(ReentrantLock lock) {
-        this.lock = lock;
+class HiloCont implements Runnable {
+    String nombre;
+    Contador contador;
+
+    public HiloCont(String nombre, Contador contador) {
+        this.nombre = nombre;
+        this.contador = contador;
     }
 
     @Override
     public void run() {
+        try {
+            for (int i = 0; i < 10; i++) {
+                contador.sumar(nombre);
 
-    }
-}
-
-class Partida {
-    Integer contEquipo1 = 0;
-    Integer contEquipo2 = 0;
-
-    ReentrantLock lock = new ReentrantLock();
-
-
-    List<DadoEquipo1> equipo1 = new ArrayList<>();
-    List<DadoEquipo1> equipo2 = new ArrayList<>();
-
-
-
-    synchronized void tirarDadoE1(Object object){
-        lock.tryLock();
-        Integer dado = new Random().nextInt(1,7);
-        System.out.println("Equipo 1 - ["+dado+"]");
-        if (dado == 6){
-            System.out.println("Ronda para el equipo 1");
-            contEquipo1++;
-            imprimirGrafico(contEquipo1);
-            imprimirGrafico(contEquipo2);
-            lock.lock();
-        }
-    }
-
-    void imprimirGrafico(Integer victorias){
-        StringBuilder cad = new StringBuilder("[");
-
-        for (int i = 0; i < 3; i++) {
-            if (i<victorias){
-                cad.append("O");
-            }else {
-                cad.append("X");
+                // Para evitar que un hilo acapare el metodo Tod0 el rato
+                Thread.sleep(100);
             }
+        }catch (InterruptedException e){
+            e.printStackTrace();
         }
-        System.out.println(cad.append("]").toString());
     }
 }

@@ -103,7 +103,7 @@ public class Main {
             resultados = new String[cantidadDeLotesRegs];
         }
 
-        System.out.println(setMes);
+
 
         // Reparto los meses en listas de meses para cada tarea y asigno una posición única del array de respuestas a cada tarea
         List<TareaGenerarString> tareasRes = new ArrayList<>();

@@ -11,6 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: const Scaffold(body: Center(child: Text('Hello World!'))),
       initialRoute: "p1",
       routes: {

@@ -25,7 +25,8 @@ class Pantalla1 extends StatelessWidget {
           },
         ),
         separatorBuilder: (_, __) => Divider(), 
-        itemCount: menuOptions.length)
+        itemCount: menuOptions.length
+      ),
     );
   }
 }

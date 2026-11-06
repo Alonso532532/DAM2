@@ -4,9 +4,10 @@ class CardTipo2 extends StatelessWidget {
   final String texto;
   final String url;
 
-  const new({
+  const CardTipo2({
     super.key,
-    required url
+    this.texto = '',
+    required this.url,
   });
 
   @override
@@ -19,7 +20,7 @@ class CardTipo2 extends StatelessWidget {
           FadeInImage(
             // Coge todo el espacio que pueda
             fit: BoxFit.cover,
-            image: NetworkImage(),
+            image: NetworkImage(url),
             placeholder: AssetImage("assets/jar-loading.gif"),
             // Tamaño
             width: double.infinity,
@@ -29,8 +30,8 @@ class CardTipo2 extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.all(10),
-            child: Text("Dainiel Reymond",)
-            )
+            child: Text(texto),
+          )
         ],
       ),
     );

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-spacing: 6px;
+        }
+
+        th {
+            border: 3px solid black;
+        }
+
+        td, th {
+            padding: 6px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let fecha = new Date()
+        let fechaIni = new Date(fecha.getFullYear(), fecha.getMonth(), 1)
+        let fechaFin = new Date(fecha.getFullYear(), fecha.getMonth() + 1, 0)
+
+        let tabla = document.createElement("table")
+        
+        for (let i = 0; i < 7; i++) {
+
+            let th = document.createElement("th")
+
+            th.textContent = `${["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"][i]}`
+            
+            tabla.append(th)
+
+        }
+        
+        tabla.append(document.createElement("tr"))
+
+        let vacios = (fechaIni.getDay() + 6) % 7
+
+        let filas = (fechaFin.getDate()+vacios)/7
+
+        if (filas%1!=0) filas++
+
+        filas = Math.floor(filas)
+
+        let cont = 0
+
+        for (let row = 0; row < filas; row++) {
+
+            for (let j = 0; j < 7; j++) {
+                
+                let td = document.createElement("td")
+
+                if (cont<fechaFin.getDate()&&vacios==0) {
+                    td.textContent = ++cont
+
+                    tabla.append(td)
+                } else {
+                    tabla.append(td)
+                    vacios--
+                }
+
+            }
+
+            tabla.append(document.createElement("tr"))
+        }
+
+
+        document.body.append(tabla)
+
+    </script>
+</body>
+</html>

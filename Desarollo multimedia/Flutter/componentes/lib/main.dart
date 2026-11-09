@@ -25,6 +25,8 @@ class MyApp extends StatelessWidget {
         "alert"     :(context) => AlertScreen(),
         "card"      :(context) => CardScreen(),
         "buttons"   :(context) => ButtonsScreen(),
+        "expansible"   :(context) => ExpansiblePractica(),
+
       },
       // Para Establecer una ruta por defecto si la ruta a la que va no existe
       onGenerateRoute: (settings) => MaterialPageRoute(builder: (context) => CardScreen(),),

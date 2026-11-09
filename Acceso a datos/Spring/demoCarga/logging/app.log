@@ -1,0 +1,61 @@
+2026-11-09T21:02:47.755+01:00  INFO 9324 --- [demoCarga] [main] o.i.ad.demoCarga.DemoCargaApplication    : Starting DemoCargaApplication using Java 27 with PID 9324 (C:\Users\dam2\Desktop\Githu\DAM2\Acceso a datos\Spring\demoCarga\target\classes started by dam2 in C:\Users\dam2\Desktop\Githu\DAM2\Acceso a datos\Spring\demoCarga)
+2026-11-09T21:02:47.757+01:00 DEBUG 9324 --- [demoCarga] [main] o.i.ad.demoCarga.DemoCargaApplication    : Running with Spring Boot v4.1.2, Spring v7.0.10
+2026-11-09T21:02:47.757+01:00  INFO 9324 --- [demoCarga] [main] o.i.ad.demoCarga.DemoCargaApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-11-09T21:02:48.049+01:00  INFO 9324 --- [demoCarga] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-09T21:02:48.088+01:00  INFO 9324 --- [demoCarga] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2026-11-09T21:02:48.278+01:00  INFO 9324 --- [demoCarga] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-09T21:02:48.305+01:00  INFO 9324 --- [demoCarga] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.13.Final
+2026-11-09T21:02:48.594+01:00  INFO 9324 --- [demoCarga] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-09T21:02:48.615+01:00  INFO 9324 --- [demoCarga] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-09T21:02:48.840+01:00  INFO 9324 --- [demoCarga] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7cb29ea8
+2026-11-09T21:02:48.841+01:00  INFO 9324 --- [demoCarga] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-09T21:02:48.905+01:00  INFO 9324 --- [demoCarga] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/democarga]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.4.11
+	Default catalog/schema: democarga/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-09T21:02:49.439+01:00  INFO 9324 --- [demoCarga] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-09T21:02:49.544+01:00  INFO 9324 --- [demoCarga] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-09T21:02:49.599+01:00  INFO 9324 --- [demoCarga] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-09T21:02:50.091+01:00  INFO 9324 --- [demoCarga] [main] o.i.ad.demoCarga.DemoCargaApplication    : Started DemoCargaApplication in 2.629 seconds (process running for 2.915)
+2026-11-09T21:02:50.219+01:00  INFO 9324 --- [demoCarga] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-09T21:02:50.220+01:00  INFO 9324 --- [demoCarga] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-11-09T21:02:50.223+01:00  INFO 9324 --- [demoCarga] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-11-09T21:02:59.042+01:00  INFO 8980 --- [demoCarga] [main] o.i.ad.demoCarga.DemoCargaApplication    : Starting DemoCargaApplication using Java 27 with PID 8980 (C:\Users\dam2\Desktop\Githu\DAM2\Acceso a datos\Spring\demoCarga\target\classes started by dam2 in C:\Users\dam2\Desktop\Githu\DAM2\Acceso a datos\Spring\demoCarga)
+2026-11-09T21:02:59.043+01:00 DEBUG 8980 --- [demoCarga] [main] o.i.ad.demoCarga.DemoCargaApplication    : Running with Spring Boot v4.1.2, Spring v7.0.10
+2026-11-09T21:02:59.044+01:00  INFO 8980 --- [demoCarga] [main] o.i.ad.demoCarga.DemoCargaApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-11-09T21:02:59.326+01:00  INFO 8980 --- [demoCarga] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-09T21:02:59.359+01:00  INFO 8980 --- [demoCarga] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 2 JPA repository interfaces.
+2026-11-09T21:02:59.549+01:00  INFO 8980 --- [demoCarga] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-09T21:02:59.576+01:00  INFO 8980 --- [demoCarga] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.13.Final
+2026-11-09T21:02:59.816+01:00  INFO 8980 --- [demoCarga] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-09T21:02:59.834+01:00  INFO 8980 --- [demoCarga] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-09T21:03:00.052+01:00  INFO 8980 --- [demoCarga] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e747037
+2026-11-09T21:03:00.053+01:00  INFO 8980 --- [demoCarga] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-09T21:03:00.111+01:00  INFO 8980 --- [demoCarga] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/democarga]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.4.11
+	Default catalog/schema: democarga/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-09T21:03:00.622+01:00  INFO 8980 --- [demoCarga] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-09T21:03:00.735+01:00  INFO 8980 --- [demoCarga] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-09T21:03:00.776+01:00  INFO 8980 --- [demoCarga] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-09T21:03:01.197+01:00  INFO 8980 --- [demoCarga] [main] o.i.ad.demoCarga.DemoCargaApplication    : Started DemoCargaApplication in 2.458 seconds (process running for 2.731)
+2026-11-09T21:03:01.204+01:00 DEBUG 8980 --- [demoCarga] [main] o.i.a.d.servicios.ClienteService         : id 1
+2026-11-09T21:03:01.327+01:00  INFO 8980 --- [demoCarga] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-09T21:03:01.328+01:00  INFO 8980 --- [demoCarga] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-11-09T21:03:01.333+01:00  INFO 8980 --- [demoCarga] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -14,12 +14,13 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
+@ToString
 public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     LocalDateTime fecha;
-    String resuman;
+    String resumen;
 
 }

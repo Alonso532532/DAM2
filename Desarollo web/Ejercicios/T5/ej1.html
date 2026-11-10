@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="return validar();">
+        <label for="dni">Dni: </label>
+        <input type="text" id="dni" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        let input = document.getElementById("dni")
+
+        function validar(){
+            let texto = document.getElementById("dni").value
+            if (/^\d{9}[A-Z]$/.test(texto)){
+                return true
+                alert("DNI válido")
+            } else {
+                alert("DNI inválido")
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

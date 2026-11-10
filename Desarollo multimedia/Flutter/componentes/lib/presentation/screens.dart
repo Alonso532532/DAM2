@@ -5,3 +5,6 @@ export 'package:componentes/presentation/screens/listview2_screen.dart';
 export 'package:componentes/presentation/screens/listview_screen.dart';
 export 'package:componentes/presentation/screens/menu_screen.dart';
 export 'package:componentes/presentation/screens/practica8.dart';
+export 'package:componentes/presentation/screens/slider_screen.dart';
+export 'package:componentes/presentation/screens/snack_bar.dart';
+export 'package:componentes/presentation/screens/animated_screen.dart';

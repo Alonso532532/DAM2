@@ -5,21 +5,31 @@ class AlertScreen extends StatelessWidget {
    
   const AlertScreen({super.key});
   
+  // El método que ejecuta la alerta
   void mostrarAlerta(BuildContext context){
-    showDialog(context: context, builder: (context)  {
-      return AlertDialog(
-        title: Text("Título de la Alerta"),
-        content: Column(
-          mainAxisSize: .min,
-          children: [
-            Text("Esto es el contenido de la alerta"),
-            FlutterLogo(
-              size: 100,
-            )
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context)  {
+        return AlertDialog(
+          title: Text("Título de la Alerta"),
+          content: Column(
+            mainAxisSize: .min,
+            children: [
+              Text("Esto es el contenido de la alerta"),
+              FlutterLogo(
+                size: 100,
+              )
+            ],
+          ),
+          // define los borónes que tendrá la alerta
+          actions: [
+            TextButton(onPressed: ()=> Navigator.pop(context), child: Text('Cancelar', style: TextStyle(color: Colors.red),)),
+            TextButton(onPressed: ()=> Navigator.pop(context), child: Text('Ok'))
           ],
-        ),
-      );
-    },);
+        );
+      },
+    );
   }
 
   @override

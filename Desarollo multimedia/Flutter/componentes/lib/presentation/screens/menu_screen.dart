@@ -15,6 +15,9 @@ class MenuScreen extends StatelessWidget {
       MenuOption(ruta: "alert", icono: Icons.lock_clock_outlined, nombre: "Alertas"),
       MenuOption(ruta: "buttons", icono: Icons.accessibility_new, nombre: "Botones"),
       MenuOption(ruta: "expansible", icono: Icons.account_tree_rounded, nombre: "Expansible"),
+      MenuOption(ruta: "slider", icono: Icons.slideshow_rounded, nombre: "Slider"),
+      MenuOption(ruta: "snack", icono: Icons.snapchat, nombre: "Snack bar"),
+      MenuOption(ruta: "animated", icono: Icons.auto_fix_normal_outlined, nombre: "Animated scteen"),
     ];
 
     return Scaffold(

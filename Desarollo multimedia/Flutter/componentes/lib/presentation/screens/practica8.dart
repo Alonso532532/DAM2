@@ -18,7 +18,6 @@ class ExpansiblePractica extends StatelessWidget {
           ),
           leading: Icon(Icons.shopping_basket),
           title: Text("Frutas"),
-          initiallyExpanded: true,
           children: [
             ListTile(title: const Text("Manzana"), onTap: (){},),
             ListTile(title: Text("Pera"), onTap: (){},),

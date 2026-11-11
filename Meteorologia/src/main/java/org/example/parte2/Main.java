@@ -8,10 +8,7 @@ import java.nio.file.Path;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ForkJoinPool;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class Main {
     static void main() {
@@ -85,6 +82,19 @@ public class Main {
         List<Registro> maxYMin = forkJoinPool.invoke(new TareaMaxYMin(listaCompleta));
 
         // <============================================= 4 - Datos por més en Teruel =============================================>
+
+        List<TareaDatosTeruel> listaTareasDatosTeruel = new ArrayList<>();
+
+        for (String mes: mapaRegistrosPorMes.getRegistros().keySet()) {
+            listaTareasDatosTeruel.add(new TareaDatosTeruel(mapaRegistrosPorMes.getRegistros().get(mes)));
+        }
+
+        ForkJoinTask.invokeAll(listaTareasDatosTeruel);
+        List<DatosTeruel> resultadosTeruel = listaTareasDatosTeruel.stream()
+                .map(ForkJoinTask::join)
+                .toList();
+
+        resultadosTeruel.forEach(System.out::println);
 
 
 

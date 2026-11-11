@@ -15,9 +15,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDial,
-    QMainWindow, QMenuBar, QPushButton, QRadioButton,
-    QSizePolicy, QSlider, QStatusBar, QTabWidget,
+from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
+    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
     QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
@@ -27,46 +26,106 @@ class Ui_MainWindow(object):
         MainWindow.resize(800, 600)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout = QVBoxLayout(self.centralwidget)
+        self.layoutWidget = QWidget(self.centralwidget)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(70, 30, 747, 166))
+        self.horizontalLayout_4 = QHBoxLayout(self.layoutWidget)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.tabWidget = QTabWidget(self.centralwidget)
-        self.tabWidget.setObjectName(u"tabWidget")
-        self.tab = QWidget()
-        self.tab.setObjectName(u"tab")
-        self.horizontalSlider = QSlider(self.tab)
-        self.horizontalSlider.setObjectName(u"horizontalSlider")
-        self.horizontalSlider.setGeometry(QRect(40, 20, 160, 16))
-        self.horizontalSlider.setOrientation(Qt.Orientation.Horizontal)
-        self.tabWidget.addTab(self.tab, "")
-        self.tab_2 = QWidget()
-        self.tab_2.setObjectName(u"tab_2")
-        self.radioButton = QRadioButton(self.tab_2)
-        self.radioButton.setObjectName(u"radioButton")
-        self.radioButton.setGeometry(QRect(20, 20, 98, 24))
-        self.checkBox = QCheckBox(self.tab_2)
-        self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setGeometry(QRect(20, 60, 84, 24))
-        self.tabWidget.addTab(self.tab_2, "")
+        self.label = QLabel(self.layoutWidget)
+        self.label.setObjectName(u"label")
 
-        self.verticalLayout.addWidget(self.tabWidget)
+        self.verticalLayout.addWidget(self.label)
 
-        self.pushButton = QPushButton(self.centralwidget)
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.pushButton = QPushButton(self.layoutWidget)
         self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setCheckable(True)
 
-        self.verticalLayout.addWidget(self.pushButton)
+        self.horizontalLayout.addWidget(self.pushButton)
 
-        self.comboBox = QComboBox(self.centralwidget)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
+        self.pushButton_2 = QPushButton(self.layoutWidget)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setCheckable(True)
 
-        self.verticalLayout.addWidget(self.comboBox)
+        self.horizontalLayout.addWidget(self.pushButton_2)
 
-        self.dial = QDial(self.centralwidget)
-        self.dial.setObjectName(u"dial")
+        self.pushButton_3 = QPushButton(self.layoutWidget)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setCheckable(True)
 
-        self.verticalLayout.addWidget(self.dial)
+        self.horizontalLayout.addWidget(self.pushButton_3)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout)
+
+        self.label_2 = QLabel(self.layoutWidget)
+        self.label_2.setObjectName(u"label_2")
+
+        self.verticalLayout.addWidget(self.label_2)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.pushButton_5 = QPushButton(self.layoutWidget)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.pushButton_5.setCheckable(True)
+
+        self.horizontalLayout_2.addWidget(self.pushButton_5)
+
+        self.pushButton_4 = QPushButton(self.layoutWidget)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setCheckable(True)
+
+        self.horizontalLayout_2.addWidget(self.pushButton_4)
+
+        self.pushButton_6 = QPushButton(self.layoutWidget)
+        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.pushButton_6.setCheckable(True)
+
+        self.horizontalLayout_2.addWidget(self.pushButton_6)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
+
+        self.label_3 = QLabel(self.layoutWidget)
+        self.label_3.setObjectName(u"label_3")
+
+        self.verticalLayout.addWidget(self.label_3)
+
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.pushButton_8 = QPushButton(self.layoutWidget)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+        self.pushButton_8.setCheckable(True)
+
+        self.horizontalLayout_3.addWidget(self.pushButton_8)
+
+        self.pushButton_7 = QPushButton(self.layoutWidget)
+        self.pushButton_7.setObjectName(u"pushButton_7")
+        self.pushButton_7.setCheckable(True)
+
+        self.horizontalLayout_3.addWidget(self.pushButton_7)
+
+        self.pushButton_9 = QPushButton(self.layoutWidget)
+        self.pushButton_9.setObjectName(u"pushButton_9")
+        self.pushButton_9.setCheckable(True)
+
+        self.horizontalLayout_3.addWidget(self.pushButton_9)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+
+
+        self.horizontalLayout_4.addLayout(self.verticalLayout)
+
+        self.label_4 = QLabel(self.layoutWidget)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setWordWrap(True)
+
+        self.horizontalLayout_4.addWidget(self.label_4)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -79,22 +138,23 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
-
-
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Tab 1", None))
-        self.radioButton.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
-        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Tab 2", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Uno", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Dos", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Tres", None))
-
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Color de texto", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Rojo", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Verde", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Azul", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Tipo de letra", None))
+        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Verdana", None))
+        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Arial", None))
+        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"Tahoma", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Tama\u00f1o de texto", None))
+        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"10", None))
+        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"12", None))
+        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"14", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis quam molestie iaculis finibus. Vestibulum sed arcu laoreet felis volutpat venenatis in vel sapien. Vestibulum suscipit augue nec lacus ornare, in feugiat felis iaculis. Sed dignissim, tellus eu rutrum viverra, lectus quam auctor urna, quis congue tellus eros ut enim. Fusce commodo, turpis sed faucibus varius, libero turpis aliquet justo, id pretium ligula neque vel metus. Nam pulvinar nec sem eget convallis. In luctus aliquet ligula. Maecenas dictum massa vitae tortor faucibus, bibendum dictum libero pellentesque. Sed eros ante, lobortis nec sem a, cursus ullamcorper dui. Integer justo nibh, pharetra et rhoncus ut, scelerisque in nisl. Sed eget neque sit amet libero eleifend tincidunt. Duis a accumsan velit. Etiam volutpat tristique est, et varius felis euismod at. ", None))
     # retranslateUi
 

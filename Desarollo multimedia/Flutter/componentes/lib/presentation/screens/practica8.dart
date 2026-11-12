@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class ExpansiblePractica extends StatelessWidget {
@@ -9,19 +11,26 @@ class ExpansiblePractica extends StatelessWidget {
       appBar: AppBar(
         title: Text("Expansible"),
       ),
+
       body: Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
         child: ExpansionTile(
+
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
             side: const BorderSide(color: Colors.black87, width: 1),
           ),
+
           leading: Icon(Icons.shopping_basket),
           title: Text("Frutas"),
+
           children: [
-            ListTile(title: const Text("Manzana"), onTap: (){},),
-            ListTile(title: Text("Pera"), onTap: (){},),
-            ListTile(title: Text("Naranja"), onTap: (){},),
+            ListTile(title: const Text("Manzana"), onTap: (){ log("Manzana");},),
+            ListTile(title: Text("Pera"), onTap: (){log("Pera");},),
+            ListTile(title: Text("Naranja"), onTap: (){log("Naranja");},),
+            FilledButton(
+                onPressed: (){}, 
+                child: Text("Boton"),),
           ],
         ),
       ),

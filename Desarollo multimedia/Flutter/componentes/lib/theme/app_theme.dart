@@ -24,6 +24,28 @@ class AppTheme {
 
     appBarTheme: const AppBarTheme(
       centerTitle: true,
+    ),
+
+            // input decoration theme
+    inputDecorationTheme: InputDecorationTheme(
+      floatingLabelStyle: TextStyle(color: Colors.blue),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.blue),
+        borderRadius: .only(
+          bottomLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
+        )
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide:  BorderSide(
+          width: 3,
+          color: Colors.blue,
+        ),
+        borderRadius: .only(
+          bottomRight: Radius.circular(10),
+          topLeft: Radius.circular(10),
+        )
+      )
     )
   );
 
@@ -52,6 +74,8 @@ class AppTheme {
         ),
         iconTheme: IconThemeData(color: const Color.fromARGB(255, 255, 139, 7)),
         scaffoldBackgroundColor: const Color.fromARGB(255, 0, 0, 0),
+
+
   );
 
 }

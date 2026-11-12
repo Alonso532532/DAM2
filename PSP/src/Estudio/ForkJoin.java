@@ -36,8 +36,7 @@ class TareaDividirCont extends RecursiveTask<String> {
             TareaDividirCont tarea1 = new TareaDividirCont(valor/2, cont+1);
             TareaDividirCont tarea2 = new TareaDividirCont(valor/2, cont+1);
 
-            tarea1.fork();
-            tarea2.fork();
+            invokeAll(tarea1, tarea2);
 
             return "["+tarea1.join()+"-"+tarea2.join()+"]";
         } else {

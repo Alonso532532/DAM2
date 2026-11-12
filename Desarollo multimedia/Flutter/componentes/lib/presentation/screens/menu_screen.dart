@@ -18,6 +18,7 @@ class MenuScreen extends StatelessWidget {
       MenuOption(ruta: "slider", icono: Icons.slideshow_rounded, nombre: "Slider"),
       MenuOption(ruta: "snack", icono: Icons.snapchat, nombre: "Snack bar"),
       MenuOption(ruta: "animated", icono: Icons.auto_fix_normal_outlined, nombre: "Animated scteen"),
+      MenuOption(ruta: "formulario", icono: Icons.forum_outlined, nombre: "Formulario"),
     ];
 
     return Scaffold(

@@ -80,6 +80,8 @@ public class Main {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
 
         List<Registro> maxYMin = forkJoinPool.invoke(new TareaMaxYMin(listaCompleta));
+        Registro tMax = maxYMin.getFirst();
+        Registro tMin = maxYMin.getLast();
 
         // <============================================= 4 - Datos por més en Teruel =============================================>
 
@@ -90,13 +92,31 @@ public class Main {
         }
 
         ForkJoinTask.invokeAll(listaTareasDatosTeruel);
-        List<DatosTeruel> resultadosTeruel = listaTareasDatosTeruel.stream()
-                .map(ForkJoinTask::join)
-                .toList();
+        List<DatosTeruel> resultadosTeruel = listaTareasDatosTeruel.stream().map(ForkJoinTask::join).toList();
 
-        resultadosTeruel.forEach(System.out::println);
+        // <============================================= Mostrar =============================================>
 
+        System.out.println("<"+"=".repeat(20)+" TEMPERATURA MAXIMA "+"=".repeat(20)+">");
+        System.out.println("Temperatura: "+tMax.getTmax()+" | Lugar: "+tMax.nombre+" | Fecha: "+tMax.fecha+" | Hora: "+tMax.horatmax);
+        System.out.println("<"+"=".repeat(60)+">\n");
+        System.out.println("<"+"=".repeat(20)+" TEMPERATURA MINIMA "+"=".repeat(20)+">");
+        System.out.println("Temperatura: "+tMin.getTmin()+" | Lugar: "+tMin.nombre+" | Fecha: "+tMin.fecha+" | Hora: "+tMin.horatmin);
+        System.out.println("<"+"=".repeat(60)+">\n");
 
+        String[] meses = new String[]{"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+
+        StringBuilder maximas = new StringBuilder();
+        StringBuilder minimas = new StringBuilder();
+        maximas.append("<"+"=".repeat(20)+" TEMPERATURAS MAXIMAS EN TERUEL "+"=".repeat(20)+">\n");
+        minimas.append("<"+"=".repeat(20)+" TEMPERATURAS MINIMAS EN TERUEL "+"=".repeat(20)+">\n");
+        for (int i = 0; i < 12; i++) {
+            DatosTeruel resultado = resultadosTeruel.get(i);
+            maximas.append("< "+meses[i]+" | Temperatura máxima promedio: "+resultado.avgTMax+" | Temperatura maxima más alta: "+resultado.tMaxMax+" | Temperatura maxima más baja "+resultado.tMaxMin+"\n");
+            minimas.append("< "+meses[i]+" | Temperatura minima promedio: "+resultado.avgTMin+" | Temperatura minima más baja: "+resultado.tMinMin+" | Temperatura minima más alta "+resultado.tMinMax+"\n");
+        }
+        maximas.append("<"+"=".repeat(70)+">\n");
+        minimas.append("<"+"=".repeat(70)+">\n");
+        System.out.println(maximas+"\n"+minimas);
 
         // <============================================= Tiempo =============================================>
 

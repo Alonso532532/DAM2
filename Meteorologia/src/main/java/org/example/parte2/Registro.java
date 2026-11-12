@@ -8,6 +8,7 @@ public class Registro {
     String horatmin;
     Float tmax;
     String horatmax;
+    String indicativo;
 
     // Saco el año y més para poder agrupar por estos
     String mes;
@@ -16,7 +17,7 @@ public class Registro {
          mes = fecha.substring(5, 7);
     }
 
-    public Registro(String fecha, String nombre, String provincia, Float tmin, String horatmin, Float tmax, String horatmax) {
+    public Registro(String fecha, String nombre, String provincia, Float tmin, String horatmin, Float tmax, String horatmax, String indicativo) {
         this.fecha = fecha;
         this.nombre = nombre;
         this.provincia = provincia;
@@ -24,6 +25,7 @@ public class Registro {
         this.horatmin = horatmin;
         this.tmax = tmax;
         this.horatmax = horatmax;
+        this.indicativo = indicativo;
         calcularFecha();
     }
 
@@ -94,6 +96,14 @@ public class Registro {
         this.mes = mes;
     }
 
+    public String getIndicativo() {
+        return indicativo;
+    }
+
+    public void setIndicativo(String indicativo) {
+        this.indicativo = indicativo;
+    }
+
     @Override
     public String toString() {
         return "Fecha - " + fecha +
@@ -103,6 +113,7 @@ public class Registro {
                 " | Temperatura minima - " + tmin +
                 " | horatmin - " + horatmin +
                 " | horatmax - " + horatmax +
-                " | mesYAno - " + mes;
+                " | mesYAno - " + mes +
+                " | Indicativo - " + indicativo;
     }
 }

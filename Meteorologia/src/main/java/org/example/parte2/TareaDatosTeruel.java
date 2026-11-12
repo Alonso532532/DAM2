@@ -2,6 +2,7 @@ package org.example.parte2;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.RecursiveTask;
 
 public class TareaDatosTeruel extends RecursiveTask<DatosTeruel> {
@@ -35,12 +36,12 @@ public class TareaDatosTeruel extends RecursiveTask<DatosTeruel> {
         } else {
             DatosTeruel datosTeruel = new DatosTeruel();
 
-            datosTeruel.tMaxMax = regs.stream().max(Comparator.comparing(Registro::getTmax)).get().tmax;
-            datosTeruel.tMinMax = regs.stream().max(Comparator.comparing(Registro::getTmin)).get().tmin;
-            datosTeruel.tMaxMin = regs.stream().min(Comparator.comparing(Registro::getTmax)).get().tmax;
-            datosTeruel.tMinMin = regs.stream().min(Comparator.comparing(Registro::getTmin)).get().tmin;
-            datosTeruel.avgTMax = (float) regs.stream().mapToDouble(a-> a.tmax).average().getAsDouble();
-            datosTeruel.avgTMin = (float) regs.stream().mapToDouble(a-> a.tmax).average().getAsDouble();
+            datosTeruel.tMaxMax = regs.stream().filter(a->a.tmax!=null && Objects.equals(a.indicativo, "8368U")).max(Comparator.comparing(Registro::getTmax)).get().tmax;
+            datosTeruel.tMinMax = regs.stream().filter(a->a.tmin!=null && Objects.equals(a.indicativo, "8368U")).max(Comparator.comparing(Registro::getTmin)).get().tmin;
+            datosTeruel.tMaxMin = regs.stream().filter(a->a.tmax!=null && Objects.equals(a.indicativo, "8368U")).min(Comparator.comparing(Registro::getTmax)).get().tmax;
+            datosTeruel.tMinMin = regs.stream().filter(a->a.tmin!=null && Objects.equals(a.indicativo, "8368U")).min(Comparator.comparing(Registro::getTmin)).get().tmin;
+            datosTeruel.avgTMax = (float) regs.stream().filter(a->a.tmax!=null && Objects.equals(a.indicativo, "8368U")).mapToDouble(a-> a.tmax).average().getAsDouble();
+            datosTeruel.avgTMin = (float) regs.stream().filter(a->a.tmin!=null && Objects.equals(a.indicativo, "8368U")).mapToDouble(a-> a.tmin).average().getAsDouble();
 
             return datosTeruel;
         }

@@ -55,4 +55,20 @@ public class DatosTeruel {
             avgTMin = (avgTMin+t)/2;
         }
     }
+
+    @Override
+    public String toString() {
+        return "DatosTeruel{" +
+                "avgTMax=" + avgTMax +
+                ", tMaxMax=" + tMaxMax +
+                ", tMaxMin=" + tMaxMin +
+                ", avgTMin=" + avgTMin +
+                ", tMinMax=" + tMinMax +
+                ", tMinMin=" + tMinMin +
+                ", aMaxMax='" + aMaxMax + '\'' +
+                ", aMaxMin='" + aMaxMin + '\'' +
+                ", aMinMax='" + aMinMax + '\'' +
+                ", aMinMin='" + aMinMin + '\'' +
+                '}';
+    }
 }

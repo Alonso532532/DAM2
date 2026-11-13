@@ -1,6 +1,9 @@
 package Estudio.ejs.CunentaVancariaLock;
 
 import java.util.Random;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ej3_4 {
@@ -17,24 +20,26 @@ class CuentaBancaria {
     Integer saldo = 500;
     ReentrantLock lock = new ReentrantLock();
 
+
+
     public void operar(Integer cant, String nombre){
 
         lock.lock();
 
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+        try {
+            Thread.sleep(1000);
 
-        System.out.println("<=======================================================================>");
-        System.out.println(nombre + " - " + (cant >= 0 ? "Ingresa" : "Retira") + ": " + cant);
-        System.out.println("Saldo anterior: " + saldo);
-        saldo += cant;
-        System.out.println("Saldo posterior: " + saldo);
-        System.out.println("<=======================================================================>");
-
-        lock.unlock();
+            System.out.println("<=======================================================================>");
+            System.out.println(nombre + " - " + (cant >= 0 ? "Ingresa" : "Retira") + ": " + cant);
+            System.out.println("Saldo anterior: " + saldo);
+            saldo += cant;
+            System.out.println("Saldo posterior: " + saldo);
+            System.out.println("<=======================================================================>");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } finally {
+            lock.unlock();
+        }
 
     }
 

@@ -9,6 +9,7 @@ public class ej3_4 {
         CuentaBancaria cuentaBancaria = new CuentaBancaria();
         for (int i = 0; i < 5; i++) {
             Thread hilo = new Thread(new HiloOperar("[Hilo"+i+"]", new Random().nextInt(0, 2)==1?-1:1, cuentaBancaria));
+
             hilo.start();
         }
     }

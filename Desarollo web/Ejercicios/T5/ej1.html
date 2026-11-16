@@ -13,12 +13,13 @@
     </form>
     <script>
         let input = document.getElementById("dni")
+        input.addEventListener("focusout", validar)
 
         function validar(){
             let texto = document.getElementById("dni").value
             if (/^\d{9}[A-Z]$/.test(texto)){
-                return true
                 alert("DNI válido")
+                return true
             } else {
                 alert("DNI inválido")
                 return false

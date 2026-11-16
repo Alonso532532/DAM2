@@ -76,6 +76,10 @@ public class ParacticaApplication implements CommandLineRunner {
 
 		productoRepositorio.save(productoI);
 
+		ofertaRepositorio.delete(ofertaII);
+
+//		System.out.println(productoRepositorio.findByPrecioBetween(0D, 20D));
+
 		//Optional<Producto> productoOptional = productoRepositorio.findById(1L);
 //
 		//if (productoOptional.isPresent()){
@@ -84,11 +88,13 @@ public class ParacticaApplication implements CommandLineRunner {
 		//}
 
 
-		//List<Producto> productos = productoRepositorio.findAll();
-		//List<Oferta> ofertas = ofertaRepositorio.findAll();
-//
-		//productos.forEach(System.out::println);
-//
-		//ofertas.forEach(System.out::println);
+		List<Producto> productos = productoRepositorio.findAll();
+		List<Oferta> ofertas = ofertaRepositorio.findAll();
+
+		System.out.println(productos.getFirst().getOfertasActuales());
+
+		productos.forEach(System.out::println);
+
+		ofertas.forEach(System.out::println);
 	}
 }

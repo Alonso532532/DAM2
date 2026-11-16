@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="return validar();">
+        <label for="correo">Email: </label>
+        <input type="text" id="correo" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        let input = document.getElementById("correo")
+
+        let listaServidores = ["terra.es","google.com","marca.es","yahoo.es"];
+
+        function validar(){
+
+            let texto = input.value
+            let resutado = texto.match(/^[A-Za-z_0-9]+@([A-Za-z]+\.[A-Za-z]{2,})$/)
+            
+            if (resutado != null && listaServidores.includes(resutado[1])){
+                alert("Correo válido")
+                return true
+            } else {
+                alert("Correo inválido")
+                return false
+            }
+
+        }
+        
+    </script>
+</body>
+</html>

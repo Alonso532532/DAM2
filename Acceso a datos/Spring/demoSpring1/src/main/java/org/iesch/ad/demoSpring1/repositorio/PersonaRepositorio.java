@@ -27,6 +27,9 @@ public interface PersonaRepositorio extends JpaRepository<Persona, Long> {
     @NativeQuery("select * from Persona")
     List<Persona> buscaTodasPersonasNative();
 
+    // Se puede usar un atributo en la consulta ya sea con snake o camel case
+    // Ej: findByHabitacionId o findByHabitacion_id
+
     // Consulta con el nombre del método
     List<Persona> findByNombreStartingWith(char c);
 

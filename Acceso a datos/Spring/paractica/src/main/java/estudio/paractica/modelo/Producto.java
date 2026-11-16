@@ -2,6 +2,7 @@ package estudio.paractica.modelo;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.repository.cdi.Eager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class Producto {
     double precio;
     long cant;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productoAplicado")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productoAplicado", fetch = FetchType.EAGER)
     @Builder.Default
     List<Oferta> ofertasActuales = new ArrayList<>();
 

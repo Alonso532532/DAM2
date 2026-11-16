@@ -17,7 +17,7 @@ public class Cliente {
     // Bidireccional
     @OneToMany(mappedBy = "cliente")
     // Unidireccional
-    // Con esto le estoy diciendo que va a se un uno a muchos (un cliente muchos pedidos), y "@JoinColumn" le especifica como se le va a llamar en la otra tabla
+    // Con esto le estoy diciendo que va a se un uno a muchos (un cliente muchos pedidos), y "@JoinColumn" le especifica como se le va a llamar a la columna
 //    @OneToMany
 //    @JoinColumn(name = "order_id")
     List<Orden> listaOrdenes;

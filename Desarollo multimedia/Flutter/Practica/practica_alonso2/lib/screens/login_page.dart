@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                 textAlign: .center,
                 validator: (value) {
                   if(value == "") return "Este campo es requerido";
-                  if (!RegExp(r'^[\w.+-]+@[\w-]+(\.[\w-]+)+$').hasMatch(value!)) return "No es un correo válido";
+                  if (!RegExp(r'^[\w.+-]+![\w-]+(\.[\w-]+)+$').hasMatch(value!)) return "No es un correo válido";
                   return null;
                 },
                 autovalidateMode: .onUserInteraction,

@@ -1,23 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:practica_alonso2/providers/datos_provider.dart';
+import 'package:provider/provider.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-
-  @override
-  void dispose() {
-    emailController.dispose();
-    passwordController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +13,9 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               TextFormField(
-                controller: emailController,
+                onChanged: (value) {
+                  context.read<DatosProvider>().setEmail(value);
+                },
                 autofocus: true,
                 keyboardType: .emailAddress,
                 textAlign: .center,
@@ -58,7 +46,9 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 20,),
               TextFormField(
-                controller: passwordController,
+                onChanged: (value) {
+                  context.read<DatosProvider>().setContrasena(value);
+                },
                 keyboardType: .visiblePassword,
                 obscureText: true,
                 textAlign: .center,
@@ -94,14 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(
-                      context, 
-                      "home",
-                      arguments: {
-                        "email": emailController.text,
-                        "password": passwordController.text,
-                      },
-                    );
+                    Navigator.pushNamed(context, "home");
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(

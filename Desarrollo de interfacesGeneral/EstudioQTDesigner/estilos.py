@@ -11,6 +11,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton.pressed.connect(self.escribir)
         self.pushButton_2.pressed.connect(lambda: self.textEdit.append(""))
         self.pushButton_3.pressed.connect(self.borrar)
+        self.comboBox.currentIndexChanged.connect(self.cambiarEstilo)
 
     def escribir(self):
         self.textEdit.append(self.lineEdit.text())
@@ -19,6 +20,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def borrar(self):
         self.textEdit.setText("")
         self.textEdit.setStyleSheet("border: 2px solid red")
+
+
+    def cambiarEstilo(self):
+        print(self.comboBox.currentIndex())
+        app.setStyle(['windows11', 'windowsvista', 'Windows', 'Fusion'][self.comboBox.currentIndex()])
+
 
 app = QApplication([]) 
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:practica_alonso2/providers/datos_provider.dart';
+import 'package:provider/provider.dart';
 
 import '/screens.dart';
 
@@ -11,15 +13,20 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // Para asignar la ventana principal
-      initialRoute: "login",
-      // Para asignar varias ventanas
-      routes: {
-        "login" :(context) => LoginPage(),
-        "home" :(context) => HomePage(),
-      },
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => DatosProvider())
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        // Para asignar la ventana principal
+        initialRoute: "login",
+        // Para asignar varias ventanas
+        routes: {
+          "login" :(context) => LoginPage(),
+          "home" :(context) => HomePage(),
+        },
+      ),
     );
   }
 }

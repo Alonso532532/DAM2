@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:practica_alonso2/providers/datos_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    
-    final args = ModalRoute.of(context)!.settings.arguments as Map<String, String>;
-    final email = args["email"];
-    final password = args["password"];
 
     return Scaffold(
       body: Padding(
@@ -16,13 +14,13 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Text("Email", textAlign: .center,),
-              Text("$email", textAlign: .center, style: TextStyle(
+              Text(context.watch<DatosProvider>().getEmail, textAlign: .center, style: TextStyle(
                 fontSize: 30,
                 fontWeight: .bold
               ),),
               SizedBox(height: 20,),
               Text("Contraseña", textAlign: .center,),
-              Text("$password", textAlign: .center, style: TextStyle(
+              Text(context.watch<DatosProvider>().getContrasena, textAlign: .center, style: TextStyle(
                 fontSize: 30,
                 fontWeight: .bold
               ),),

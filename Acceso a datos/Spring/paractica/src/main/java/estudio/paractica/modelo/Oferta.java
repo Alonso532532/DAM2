@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,8 +25,9 @@ public class Oferta {
     LocalDateTime inicio;
     LocalDateTime fin;
 
-    @ManyToOne()
-    @JoinColumn(name = "producto_id")
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, mappedBy = "ofertasActuales", fetch = FetchType.EAGER)
     @ToString.Exclude
-    Producto productoAplicado;
+    @Builder.Default
+    List<Producto> productosAplicados = new ArrayList<>();
+
 }

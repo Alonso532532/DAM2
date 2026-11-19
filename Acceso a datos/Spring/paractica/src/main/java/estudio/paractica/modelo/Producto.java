@@ -24,17 +24,24 @@ public class Producto {
     double precio;
     long cant;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productoAplicado", fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     @Builder.Default
+    @JoinTable(
+            name = "ofertas_producto",
+            joinColumns = @JoinColumn(name = "producto_id"),
+            inverseJoinColumns = @JoinColumn(name = "oferta_id")
+    )
     List<Oferta> ofertasActuales = new ArrayList<>();
 
     public void addOferta(Oferta oferta) {
         ofertasActuales.add(oferta);
-        oferta.setProductoAplicado(this);   // aquí se rellena la FK
+        oferta.getProductosAplicados().add(this);   // aquí se rellena la FK
     }
 
     public void removeOferta(Oferta oferta) {
         ofertasActuales.remove(oferta);
-        oferta.setProductoAplicado(null);
+        oferta.getProductosAplicados().remove(this);
     }
+
+
 }

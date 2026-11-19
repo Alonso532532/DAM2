@@ -8,7 +8,7 @@ import java.net.InetAddress;
 // Un cliente envia datos a un servidor
 public class SocketBasico {
     static void main() {
-        try (DatagramSocket socketUDP = new DatagramSocket(5324)){
+        try (DatagramSocket socketUDP = new DatagramSocket(5324)) {
 
             // Ejecuto el cliente que mandará una cadena en 1 segundo
             Thread cliente = new Thread(new ClienteBasico());
@@ -35,7 +35,7 @@ class ClienteBasico implements Runnable {
 
     @Override
     public void run() {
-        try (DatagramSocket datagramSocket = new DatagramSocket()){
+        try (DatagramSocket datagramSocket = new DatagramSocket()) {
 
             Thread.sleep(1000);
 
@@ -46,7 +46,7 @@ class ClienteBasico implements Runnable {
             DatagramPacket paquete = new DatagramPacket(mensaje, mensaje.length, InetAddress.getByName("127.0.0.1"), 5324);
             datagramSocket.send(paquete);
 
-        } catch (IOException | InterruptedException e ){
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }

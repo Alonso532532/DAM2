@@ -4,6 +4,7 @@ import estudio.paractica.modelo.Oferta;
 import estudio.paractica.modelo.Producto;
 import estudio.paractica.repositorios.OfertaRepositorio;
 import estudio.paractica.repositorios.ProductoRepositorio;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -74,9 +75,13 @@ public class ParacticaApplication implements CommandLineRunner {
 		productoI.addOferta(ofertaI);
 		productoI.addOferta(ofertaII);
 
+
 		productoRepositorio.save(productoI);
 
+		productoI.removeOferta(ofertaII);
 		ofertaRepositorio.delete(ofertaII);
+
+		productoRepositorio.save(productoI);
 
 //		System.out.println(productoRepositorio.findByPrecioBetween(0D, 20D));
 

@@ -34,6 +34,7 @@ public class Coche {
 
     @OneToMany(mappedBy = "coche_id")
     @Builder.Default
+    @ToString.Exclude
     List<Revision> revisiones = new ArrayList<>();
 
 }

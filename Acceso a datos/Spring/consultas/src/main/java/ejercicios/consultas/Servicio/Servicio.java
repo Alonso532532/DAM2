@@ -32,12 +32,12 @@ public class Servicio {
         return clienteRepositorio.findDistinctByCochesPrecioGreaterThan(precio);
     }
 
-    public List<Object> clientesConMasCoches() {
-        return null;
+    public List<String> clientesConMasCoches() {
+        return clienteRepositorio.clientesConMasCoches();
     }
 
     public List<Coche> cochesConMenosRevisiones() {
-        return null;
+        return cocheRepositorio.cochesConMenosRevisiones();
     }
 
     public List<Object> revisionesPorCoche() {

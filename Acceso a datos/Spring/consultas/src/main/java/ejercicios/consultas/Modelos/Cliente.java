@@ -30,5 +30,6 @@ public class Cliente {
 
     @OneToMany(mappedBy = "cliente_id")
     @Builder.Default
+    @ToString.Exclude
     List<Coche> coches = new ArrayList<>();
 }

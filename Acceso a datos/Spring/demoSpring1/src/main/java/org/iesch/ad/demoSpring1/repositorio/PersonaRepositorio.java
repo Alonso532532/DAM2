@@ -17,7 +17,7 @@ import java.util.List;
 // Para que pueda usarse en Spring se usa @Repository
 @Repository
 public interface PersonaRepositorio extends JpaRepository<Persona, Long> {
-    // La tabla se tiene que llamar igual que la clase
+    // La tabla se tiene que llamar igual que la clase, pero permite métodos como "SIZE()"
 
     // en @Query se hace una sufrida y se usa p en vez de *
     @Query("select p from Persona p") //Esto es HQL

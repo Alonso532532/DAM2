@@ -83,7 +83,9 @@ class LoginPage extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
+                  onPressed: 
+                  (context.watch<DatosProvider>().contrasena.isEmpty || context.watch<DatosProvider>().email.isEmpty) ? null :
+                   () {
                     Navigator.pushNamed(context, "home");
                   },
                   style: ElevatedButton.styleFrom(

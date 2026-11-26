@@ -5,6 +5,7 @@ import ejercicios.consultas.Modelos.Coche;
 import ejercicios.consultas.Repositorios.ClienteRepositorio;
 import ejercicios.consultas.Repositorios.CocheRepositorio;
 import ejercicios.consultas.Repositorios.RevisionRepositorio;
+import ejercicios.consultas.records.ClienteResumen;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,19 +41,19 @@ public class Servicio {
         return cocheRepositorio.cochesConMenosRevisiones();
     }
 
-    public List<Object> revisionesPorCoche() {
-        return null;
+    public List<String> revisionesPorCoche() {
+        return cocheRepositorio.infoCoches();
     }
 
     public Optional<Cliente> clientePorMatricula(String matricula) {
-        return null;
+        return cocheRepositorio.clientePropietario(matricula);
     }
 
     public Optional<Cliente> clientePorCodigoRevision(String codigo) {
-        return null;
+        return revisionRepositorio.clientePropietarioRevision(codigo);
     }
 
-    public Optional<Object> resumenPorCodigoRevision(String codigo) {
-        return null;
+    public Optional<ClienteResumen> resumenPorCodigoRevision(String codigo) {
+        return revisionRepositorio.clientePropietarioRevisionInfo(codigo);
     }
 }

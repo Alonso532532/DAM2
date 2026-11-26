@@ -10,10 +10,12 @@ class DatosProvider extends ChangeNotifier {
 
   void setEmail(String email){
     this.email = email;
+    notifyListeners();
   }
 
   void setContrasena(String contrasena){
     this.contrasena = contrasena;
+    notifyListeners();
   }
 
 }

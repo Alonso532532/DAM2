@@ -149,6 +149,15 @@ public class TiendaServicio {
     }
 
     @Transactional
+    public void quitarProveedorDeProducto(String s) {
+        Producto producto = productoRepositorio.findById(s).get();
+        Proveedor proveedor = producto.getProveedor();
+
+        producto.setProveedor(null);
+        proveedor.setProducto(null);
+    }
+
+    @Transactional
     public void asignarProveedorAProducto(String s, Long aLong) {
         Producto producto = productoRepositorio.findById(s).get();
         Proveedor proveedor = proveedorRepositorio.findById(aLong).get();
@@ -172,11 +181,12 @@ public class TiendaServicio {
     @Transactional
     public void asignarClienteAPedido(Long aLong, Long aLong1) {
         Pedido pedido = pedidoRepositorio.findById(aLong).get();
+        Cliente cliente = clienteRepositorio.findById(aLong1).get();
 
+        if (pedido.getCliente()!=null) pedido.getCliente().getPedidos().remove(pedido);
 
+        pedido.setCliente(cliente);
+        cliente.getPedidos().add(pedido);
     }
 
-    @Transactional
-    public void quitarProveedorDeProducto(String s) {
-    }
 }

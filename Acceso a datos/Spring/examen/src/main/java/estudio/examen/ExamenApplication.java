@@ -200,6 +200,40 @@ public class ExamenApplication implements CommandLineRunner {
 		} while (opcion != 0);
 	}
 
+	private void consultas() {
+		int opcion;
+		do {
+			System.out.println("\n--- RELACIONES ---");
+			System.out.println("1. Pedidos de un cliente");
+			System.out.println("2. ");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("0. Volver");
+			opcion = leerEntero("Opción: ");
+
+			switch (opcion) {
+				case 1 -> servicio.asignarClienteAPedido(
+						leerLong("Id del pedido: "),
+						leerLong("Id del cliente: "));
+				case 2 -> servicio.quitarClienteDePedido(leerLong("Id del pedido: "));
+				case 3 -> servicio.anadirProductoAPedido(
+						leerLong("Id del pedido: "),
+						leerTexto("Código del producto: "));
+				case 4 -> servicio.quitarProductoDePedido(
+						leerLong("Id del pedido: "),
+						leerTexto("Código del producto: "));
+				case 5 -> servicio.asignarProveedorAProducto(
+						leerTexto("Código del producto: "),
+						leerLong("Id del proveedor: "));
+				case 6 -> servicio.quitarProveedorDeProducto(leerTexto("Código del producto: "));
+				case 0 -> { }
+				default -> System.out.println("Opción no válida");
+			}
+		} while (opcion != 0);
+	}
+
 	// ===================== LECTURA DE DATOS =====================
 	private String leerTexto(String mensaje) {
 		System.out.print(mensaje);

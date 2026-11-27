@@ -18,26 +18,24 @@ class MainWindow(QMainWindow):
         except mysql.connector.Error as error:
             print(error)
 
-
         self.contenedorPrincioal = QVBoxLayout()
 
-        self.tabla = QTableWidget()
-
-        self.cargardatos()
-
         # ============================= COMBO BOH =============================
-        
+        self.combo = QComboBox()
+
         self.contenedorArriba = QHBoxLayout()
 
         self.labelCombo = QLabel("Selecciona una autonomía: ")
 
-        self.combo = QComboBox()
+        self.combo.currentIndexChanged.connect(self.seleccionarPorAutonomia)
 
         self.contenedorArriba.addWidget(self.labelCombo)
         self.contenedorArriba.addWidget(self.combo)
         self.contenedorPrincioal.addLayout(self.contenedorArriba)
 
         # ============================= TABLICA =============================
+
+        self.tabla = QTableWidget()
 
         self.contenedorPrincioal.addWidget(self.tabla)
 
@@ -46,12 +44,14 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(cosa)
 
+        self.cargardatos()
+
 
         
     def cargardatos(self):
         # Creo el cursor
         cursor = self.con.cursor() 
-        sql="SELECT * FROM capitales"
+        sql="SELECT Autonomía FROM capitales"
         
         # Ejecuto la consulta con el cursor
         cursor.execute(sql)
@@ -59,8 +59,29 @@ class MainWindow(QMainWindow):
         # Recojo los resultados
         self.resultado=cursor.fetchall()
 
+        self.combo.addItems(autonomia[0] for autonomia in self.resultado)
+
+        self.combo.setCurrentIndex(0)
+
+        self.seleccionarPorAutonomia()
+
+
+
+    def seleccionarPorAutonomia(self):
+        # Creo el cursor
+        cursor = self.con.cursor() 
+        sql="SELECT * FROM capitales WHERE Autonomía=%s"
+        
+        # Ejecuto la consulta con el cursor
+        cursor.execute(sql,(self.combo.currentText(),))
+
+        # Recojo los resultados
+        self.resultado=cursor.fetchall()
+
         # Coge los nobres de las tablas
         columnas = [desc[0] for desc in cursor.description]
+
+        self.tabla.clear()
 
         # Tamaño de la tabla
         self.tabla.setColumnCount(len(columnas))
@@ -75,8 +96,8 @@ class MainWindow(QMainWindow):
                 item = QTableWidgetItem(texto)
                 self.tabla.setItem(fila,col,item)
 
-
-
+# self.cursor.execute(sql, (auto,))
+# sql = "select * from capitalrs where autonomia=%s"
 
 
 
